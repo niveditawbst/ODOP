@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <magicslider>
+    <item>
+      <title><![CDATA[Slider Demo 4]]></title>
+      <identifier><![CDATA[slide4]]></identifier>
+      <config><![CDATA[{"magicslider_id":"2","title":"Slider Demo 4","status":"1","mobile":"1","portrait":"1","landscape":"2","tablet":"2","notebook":"2","laptop":"3","desktop":"3","visible":"3","vertical":"false","infinite":"true","autoplay":"true","arrows":"true","dots":"false","rows":"1","speed":"400","autoplay-Speed":"6000","padding":"15","media_gallery":{"images":{"6fqfk0opetm":{"position":"1","media_type":"image","video_provider":"","file":"\/s\/l\/slide1-4.jpg","value_id":"","label":"Alotheme Flinto","link":"http:\/\/alothemes.com\/","caption":"","disabled":"0","removed":"","video_url":"","video_title":"","video_description":"","video_metadata":"","role":""},"ls45jctc3pk":{"position":"2","media_type":"image","video_provider":"","file":"\/s\/l\/slide2-4.jpg","value_id":"","label":"Alotheme Flinto","link":"http:\/\/alothemes.com\/","caption":"","disabled":"0","removed":"","video_url":"","video_title":"","video_description":"","video_metadata":"","role":""},"4k84t7jlfjj":{"position":"3","media_type":"image","video_provider":"","file":"\/s\/l\/slide3-4.jpg","value_id":"","label":"Alotheme Flinto","link":"http:\/\/alothemes.com\/","caption":"","disabled":"0","removed":"","video_url":"","video_title":"","video_description":"","video_metadata":"","role":""},"kgo7rrra6hd":{"position":"4","media_type":"image","video_provider":"","file":"\/s\/l\/slide2-4_1.jpg","value_id":"","label":"Alotheme Flinto","link":"http:\/\/alothemes.com\/","caption":"","disabled":"0","removed":"","video_url":"","video_title":"","video_description":"","video_metadata":"","role":""}}}}]]></config>
+      <status><![CDATA[1]]></status>
+    </item>
+  </magicslider>
+</root>

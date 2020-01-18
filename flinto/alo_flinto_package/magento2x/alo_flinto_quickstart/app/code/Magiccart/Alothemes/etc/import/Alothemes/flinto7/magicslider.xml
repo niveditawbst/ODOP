@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <magicslider>
+    <item>
+      <title><![CDATA[Slider Demo 7]]></title>
+      <identifier><![CDATA[slide7]]></identifier>
+      <config><![CDATA[{"magicslider_id":"4","title":"Slider Demo 7","status":"1","mobile":"1","portrait":"1","landscape":"1","tablet":"1","notebook":"1","laptop":"1","desktop":"1","visible":"1","vertical":"false","infinite":"true","autoplay":"true","arrows":"true","dots":"false","rows":"1","speed":"400","autoplay-Speed":"6000","padding":"0","media_gallery":{"images":{"wscksf9sqel":{"position":"1","media_type":"image","video_provider":"","file":"\/s\/l\/slide7-1.jpg","value_id":"","label":"Alotheme Flinto","link":"http:\/\/alothemes.com\/","caption":"<div class=\"container figcaption\">\r\n\t<div class=\"text-slide text-slide1\">\r\n\t\t<h3 class=\"caption1 primary-font red\">New Arrivals<\/h3>\r\n\t\t<h3 class=\"caption2 black\">Spring \/Summer<\/h3>\r\n\t\t<h3 class=\"caption3 gray\">man lookbook<\/h3>\r\n\t\t<h3 class=\"caption5\"><a href=\"#\" class=\"btn-shop primary-font\">Explore now<\/a><\/h3>\r\n\t<\/div>\r\n<\/div>","disabled":"0","removed":"","video_url":"","video_title":"","video_description":"","video_metadata":"","role":""},"kb82sic3k9g":{"position":"2","media_type":"image","video_provider":"","file":"\/s\/l\/slide7-1_1.jpg","value_id":"","label":"Alotheme Flinto","link":"http:\/\/alothemes.com\/","caption":"<div class=\"container figcaption\">\r\n\t<div class=\"text-slide text-slide1\">\r\n\t\t<h3 class=\"caption1 primary-font red\">New Arrivals<\/h3>\r\n\t\t<h3 class=\"caption2 black\">Spring \/Summer<\/h3>\r\n\t\t<h3 class=\"caption3 gray\">man lookbook<\/h3>\r\n\t\t<h3 class=\"caption5\"><a href=\"#\" class=\"btn-shop primary-font\">Explore now<\/a><\/h3>\r\n\t<\/div>\r\n<\/div>","disabled":"0","removed":"","video_url":"","video_title":"","video_description":"","video_metadata":"","role":""}}}}]]></config>
+      <status><![CDATA[1]]></status>
+    </item>
+  </magicslider>
+</root>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <magicslider>
+    <item>
+      <title><![CDATA[Slider Demo 1]]></title>
+      <identifier><![CDATA[slide]]></identifier>
+      <config><![CDATA[{"magicslider_id":"1","title":"Slider Demo 1","status":"1","mobile":"1","portrait":"1","landscape":"1","tablet":"1","notebook":"1","laptop":"1","desktop":"1","visible":"1","vertical":"false","infinite":"true","autoplay":"true","arrows":"true","dots":"true","rows":"1","speed":"400","autoplay-Speed":"6000","padding":"0","media_gallery":{"images":{"vak2qw55ljp":{"position":"4","media_type":"image","video_provider":"","file":"\/s\/l\/slide1.jpg","value_id":"","label":"Alotheme Flinto","link":"http:\/\/alothemes.com\/","caption":"<div class=\"container figcaption\">\r\n\t<div class=\"text-slide text-slide1\">\r\n\t\t<h3 class=\"caption1 primary-font white\">New Arrivals<\/h3>\r\n\t\t<h3 class=\"caption2 white\">Spring 2017<\/h3>\r\n\t<\/div>\r\n<\/div>","disabled":"0","removed":"","video_url":"","video_title":"","video_description":"","video_metadata":"","role":""},"nfu9a98h5ub":{"position":"5","media_type":"image","video_provider":"","file":"\/s\/l\/slide2.jpg","value_id":"","label":"Alotheme Flinto","link":"http:\/\/alothemes.com\/","caption":"<div class=\"container figcaption\">\r\n\t<div class=\"text-slide text-slide2\">\r\n\t\t<h3 class=\"caption1 primary-font black\">New Arrivals<\/h3>\r\n\t\t<h3 class=\"caption5\"><a href=\"#\" class=\"btn-shop primary-font\">Woman Collection<\/a> <a href=\"#\" class=\"btn-shop primary-font\">Man Collection<\/a><\/h3>\r\n\t<\/div>\r\n<\/div>","disabled":"0","removed":"","video_url":"","video_title":"","video_description":"","video_metadata":"","role":""}}}}]]></config>
+      <status><![CDATA[1]]></status>
+    </item>
+  </magicslider>
+</root>
