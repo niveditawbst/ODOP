@@ -40,7 +40,7 @@
 .magicmenu .nav-desktop .level0 .level-top-mega .children a span,
 .magicmenu .nav-desktop .level0.dropdown .dropdown .level1 a{font-size: 18px;}
 .magicmenu .nav-desktop .level-top a{color:#000;font-size:14px;text-decoration:none;text-align:left}
-.magicmenu .nav-desktop .level0 .level-top-mega .children.level1 > a{position: relative; font-size: 18px;font-weight: 500;padding: 32px 0 0px;display: block;line-height: 30px;margin: 0px 25px 0 0;}
+.magicmenu .nav-desktop .level0 .level-top-mega .children.level1 > a{position: relative; font-size: 18px;font-weight: 500;padding: 10px 0px;display: block;line-height: 30px;/*margin: 0px 25px 0 0;*/}
 .magicmenu .nav-desktop .level0 .level-top-mega .children.level1 > a span{font-size: 18px;position: relative;}
 .magicmenu .nav-desktop .level0 .level-top-mega .children.level1 > a span:after, 
 .vmagicmenu .level0 .level-top-mega .children > a span:after{border-width: 0 0 1px;border-style: solid;content: "";height: 1px;left: 0;position: absolute; bottom: 0px; width: 0px;transition: all 0.35s ease 0s;}

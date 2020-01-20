@@ -643,7 +643,7 @@ tr.summary-details-excluded{font-style:italic}
 .top-link-product a.icon {display: inline-block;line-height: 50px;width: 80px;font-size: 25px;height: 50px;border-left: 1px solid #e8e8e8;color: #ff3333;text-align: center;position: relative;}
 .top-link-product a.icon .counter{font-size: 13px;position: absolute;top: 10px;right: 17px;background-color: #333;width: 18px;height: 18px;line-height: 14px;color: #fff;border-radius: 100%;}
 /* ----- header logo ------ */
-.header .logo{margin:0;padding: 10px 0px;text-decoration:none!important;outline:none;display: block;max-width: 100%;float: none;}
+.header .logo{margin:0;padding: 10px 0px;text-decoration:none!important;outline:none;display: block;/*max-width: 100%;*/float: none;}
 .header .logo strong{position:absolute;top:-999em;left:-999em;width:0;height:0;font-size:0;line-height:0;text-indent:-999em;overflow:hidden}
 /* ----- header form seach ------ */
 .tool-topsearch{float: left;width: 55%;padding-left: 35px;}

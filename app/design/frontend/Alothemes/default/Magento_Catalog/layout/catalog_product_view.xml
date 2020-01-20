@@ -6,7 +6,8 @@
  */
 -->
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <css src="mage/gallery/gallery.css"/>
     </head>
     <update handle="catalog_product_opengraph" />
@@ -91,7 +92,7 @@
 									</container>
 								</container>
 								<container name="product.info.media" htmlTag="div" htmlClass="product media product-img-box clearfix col-md-5 col-sm-5 col-xs-12" before="-">
-									
+									 <block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image" template="product/view/gallery.phtml"/> 
 								</container>
 							</container>
 							<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.details" template="product/view/details.phtml" after="-">
