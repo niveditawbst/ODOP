@@ -7,6 +7,7 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+		 <referenceBlock name="page.main.title" remove="false" />
         <move element="checkout.cart.form.before" destination="checkout.cart.container" before="cart.summary"/>
         <move element="checkout.cart.form" destination="checkout.cart.container" after="cart.summary"/>
         <move element="checkout.cart.widget" destination="checkout.cart.container" after="checkout.cart.form"/>
