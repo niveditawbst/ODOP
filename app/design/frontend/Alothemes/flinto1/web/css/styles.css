@@ -367,7 +367,7 @@ p.required{font-size:11px;text-align:right;color:#EB340A}
 .note-msg,.notice-msg{border-color:#fcd344;background-color:#fafaec;background-image:url(../images/i_msg-note.gif);color:#3d6611}
 #popupNewsletterMessages.messages { padding: 40px 9px 10px 10px !important;}
 /* BreadCrumbs */
-.breadcrumbs{text-align: center;padding: 40px 0;background-color: #f3f3f3;}
+.breadcrumbs{text-align: center;padding: 0px 0;background-color: #f3f3f3;}
 .breadcrumbs li{display: inline-block; line-height: normal;padding: 0;}
 .breadcrumbs li:before{content: "\f3d3";font-family: "Ionicons";display: inline-block;height: 9px;margin: 0 12px;width: 1px;}
 .breadcrumbs li.home{background-image: none;}
@@ -1382,7 +1382,7 @@ tr.summary-details-excluded{font-style:italic}
 .policy .policy-box .box-content .service-content .sub-title{padding: 0}
 .policy .policy-box .box-content .service-content .sub-title span{font-size: 13px; color: #1f1f1f; font-weight: normal; text-transform: none; display: block;}
 
-.policy.complete-static-policy .policy-wrap{padding: 70px 0 80px;}
+.policy.complete-static-policy .policy-wrap{padding: 40px 0 40px;}
 .policy.complete-static-policy .policy-box .box-content{border: 0;border-right: 1px solid #bcbcbc;}
 .policy.complete-static-policy .policy-box:last-child .box-content{border: 0;}
 .service-content img{margin: 0 auto;}
@@ -1674,7 +1674,7 @@ ul.magictabs{padding:0}
 .sidebar .product-items .product-item-details .product-item-actions{margin: 0;}
 .sidebar .product-items .add-to-links a .icons{padding-right: 3px;font-size: 16px;vertical-align: middle;}
 .sidebar .item:hover .actions .add-to-links {bottom: -72px;}
-.additional-custom-block .block-custom-product{padding: 50px 0 20px;margin-top: 100px;}
+.additional-custom-block .block-custom-product{padding: 50px 0 20px;margin-top: 0px;}
 /* View Type:Grid */
 .category-products.grid{margin-left: -15px;margin-right: -15px;}
 .category-products.grid .item:before,.category-products.grid .item:after{box-sizing: content-box;}
@@ -1985,7 +1985,7 @@ button.quickview:hover, button.quickview:focus{border: 0;}
 .catalog-product-view .page.messages{max-width: 1170px;margin-left: auto;margin-right: auto;}
 .catalog-product-view .message.success{margin-bottom: 0;}
 .product-essential{background-color: #f3f3f3;}
-.product-view{margin: 0 0 90px;}
+.product-view{margin: 0 0 0px;}
 .product-view .product-shop{text-align:left;}
 .product-shop-content {padding: 0 0 0 15px;}
 .product-add-form{padding: 0 0 30px 15px;}
@@ -2000,7 +2000,7 @@ button.quickview:hover, button.quickview:focus{border: 0;}
 .product-info-main .product.attribute.overview{color: #222;font-size: 18px;margin: 0;padding: 0px 0 35px;}
 .product-info-main .product.attribute.overview p{margin: 0;font-size: 18px;line-height: 25px;color: #222;}
 .product-view .product-shop .short-description h2{color:#2a2a2a;font-size: 16px;text-transform: uppercase;display: none;}
-.product-view .product-shop .product-social-links ,.product-add-form .product-social-links{display: block;margin: 20px 0 0;padding: 0;border: 0 none;}
+.product-view .product-shop .product-social-links ,.product-add-form .product-social-links{display: block;margin: 20px 0 0;padding: 0;border: 0 none;text-align:left;}
 .product-view .product-shop .add-to-links,.product-add-form .add-to-links{margin: 0;}
 .product-view .product-shop .product-social-links a,.product-add-form .product-social-links a{text-align: left; font-size: 18px;margin: 0 30px 0 0; padding: 0px;text-decoration: none;line-height: 30px;display: inline-block;}
 .product-view .product-shop .product-social-links a:last-child,.product-add-form .product-social-links a:last-child{margin: 0;}
@@ -2066,7 +2066,7 @@ button.quickview:hover, button.quickview:focus{border: 0;}
 .product-add-form .fieldset{padding: 0; margin: 0;background-color: transparent;}
 .product-add-form .fieldset .swatch-attribute .swatch-option{float: none;display: inline-block;margin-bottom: 0;}
 .product-view .product-shop .short-description .std p{font-size:13px;color:#252525;margin: 0;line-height: 24px;}
-.product-view .product-shop .addit{clear: both;padding: 20px 0 0;float: none;margin: 0;display: block; text-align: center;}
+.product-view .product-shop .addit{clear: both;padding: 20px 0 0;float: none;margin: 0;display: block; text-align: left;}
 .alo-social-links .custom-html .icon-share{margin: 0;}
 .alo-social-links .custom-html ul li{padding: 0;margin: 0;float: left;}
 .alo-social-links .custom-html .title-social{padding: 0 10px 0 0;font-size: 14px;color: #000;font-weight: 600;text-transform: uppercase;margin: 0;line-height: 25px;display: none;}
