@@ -1382,7 +1382,7 @@ tr.summary-details-excluded{font-style:italic}
 .policy .policy-box .box-content .service-content .sub-title{padding: 0}
 .policy .policy-box .box-content .service-content .sub-title span{font-size: 13px; color: #1f1f1f; font-weight: normal; text-transform: none; display: block;}
 
-.policy.complete-static-policy .policy-wrap{padding: 40px 0 40px;}
+.policy.complete-static-policy .policy-wrap{padding: 50px 0 50px;}
 .policy.complete-static-policy .policy-box .box-content{border: 0;border-right: 1px solid #bcbcbc;}
 .policy.complete-static-policy .policy-box:last-child .box-content{border: 0;}
 .service-content img{margin: 0 auto;}
