@@ -95,7 +95,15 @@
 							</container>
 						</container>
 						<container name="product.info.media" htmlTag="div" htmlClass="product-media product media product-img-box clearfix col-md-5 col-sm-5 col-xs-12" before="-">
+<!--
 							<block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image" template="product/view/gallery.phtml"/>
+-->
+							<block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image" template="Magento_Catalog::product/view/gallery.phtml">
+								<arguments>
+									<argument name="gallery_options" xsi:type="object">Magento\Catalog\Block\Product\View\GalleryOptions</argument>
+									<argument name="imageHelper" xsi:type="object">Magento\Catalog\Helper\Image</argument>
+								</arguments>
+							</block>
 						</container>
 					</container>
 				</container>
