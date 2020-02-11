@@ -33,13 +33,13 @@ class CouponManagement extends \Magento\Quote\Model\CouponManagement
         }
         
         // custom code to provide discount to subscribe customer at their first order 
-        $customerId = $quote->getCustomerId();
+        $customerEmail = $quote->getCustomerEmail();
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 		$discountCouponCode = $objectManager->create('\Magento\Framework\App\Config\ScopeConfigInterface')->getValue('tact/general/discountCoupon', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
         if($customerId && $couponCode == $discountCouponCode){
-			$checkSubscriber = $objectManager->create('\Magento\Newsletter\Model\Subscriber')->loadByCustomerId($customerId);
+			$checkSubscriber = $objectManager->create('\Magento\Newsletter\Model\Subscriber')->loadByEmail($customerId);
 			if (!$checkSubscriber->isSubscribed()) {
-				throw new CouldNotSaveException(__('You must be subscribe to use this coupon code.'));
+				throw new CouldNotSaveException(__('You must be subscribe and logged in, to use this coupon code.'));
 			}
 		}
         // end of custom code
