@@ -3,10 +3,16 @@
 	$cmsPages = $this->getCmsPages();
 	$getProductsByTag = $this->getProductsByTag('Agra');
 	
-	echo '<pre>##';
+	//~ echo '<pre>##';
 	//~ print_r($availableDistrict->getData());
 	//~ print_r($cmsPages->getData());
-	print_r($getProductsByTag->getData());
-	exit;
+	
+	foreach($availableDistrict as $availableDis){
+?>
+			<li><?php echo $availableDis->getDistrictName(); ?></li>
+			<li><?php echo $availableDis->getPopularProduct(); ?></li>
+<?	}
+	//~ print_r($getProductsByTag->getData());
+	//~ exit;
 	
 ?>
