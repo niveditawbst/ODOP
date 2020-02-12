@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Techelogy. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Techelogy_District::techelogy_district_index" title="Add District" module="Techelogy_District"  sortOrder="20" dependsOnModule="Techelogy_District" action="district/district/index" resource="Techelogy_District::techelogy_district_index"/>
+<!--AddMenu-->
+    </menu>
+</config>
