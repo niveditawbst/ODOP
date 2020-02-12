@@ -13,8 +13,6 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $mediaUrl =  $objectManager->get('Magento\Store\Model\StoreManagerInterface')
                     ->getStore()
                     ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
-
-$link = 'javascript:void(0)';
 ?>
    
    
@@ -26,6 +24,7 @@ $link = 'javascript:void(0)';
 				<ol class="products list items product-items">
 					<?php foreach($availableDistrict as $availableDis){
 						
+						$link = 'javascript:void(0)';
 						if($availableDis->getDistrictName() == 'Agra'){
 							$link = 'https://odopmart.com/custom-leather.html';
 						}else if($availableDis->getDistrictName() == 'Lucknow'){
