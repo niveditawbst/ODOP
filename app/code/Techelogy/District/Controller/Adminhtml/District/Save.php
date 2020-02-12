@@ -26,7 +26,7 @@ class Save extends \Magento\Backend\App\Action
 						$result = $uploader->save($mediaDirectory->getAbsolutePath('district/images'));
 						unset($result['tmp_name']);
 						unset($result['path']);
-						$data['district_image'] = $result['file'];
+						$data['district_image'] = '/district/images/'.$result['file'];
 				} catch (Exception $e) {
 					$data['district_image'] = $_FILES['district_image']['name'];
 				}
