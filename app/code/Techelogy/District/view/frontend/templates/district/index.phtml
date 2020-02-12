@@ -1,18 +1,75 @@
 <?php
-	$availableDistrict = $this->getAvailableDistrict();
-	$cmsPages = $this->getCmsPages();
-	$getProductsByTag = $this->getProductsByTag('Agra');
-	
-	//~ echo '<pre>##';
-	//~ print_r($availableDistrict->getData());
-	//~ print_r($cmsPages->getData());
-	
-	foreach($availableDistrict as $availableDis){
+   $availableDistrict = $this->getAvailableDistrict();
+   $cmsPages = $this->getCmsPages();
+   //~ $getProductsByTag = $this->getProductsByTag('Agra');
+   
+   //~ echo '<pre>##';
+   //~ print_r($availableDistrict->getData());
+   //~ print_r($cmsPages->getData());
+   
+   ?>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$mediaUrl =  $objectManager->get('Magento\Store\Model\StoreManagerInterface')
+                    ->getStore()
+                    ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
 ?>
-			<li><?php echo $availableDis->getDistrictName(); ?></li>
-			<li><?php echo $availableDis->getPopularProduct(); ?></li>
-<?	}
-	//~ print_r($getProductsByTag->getData());
-	//~ exit;
-	
-?>
+   
+   
+<div class="page-layout-2columns-left ">
+   <div class="columns">
+      <div class="column main">
+         <?php if($availableDistrict->getSize() > 0): ?>
+			 <div class="category-products clearfix products wrapper grid products-grid">
+				<ol class="products list items product-items">
+					<?php foreach($availableDistrict as $availableDis){ ?>
+				   <li class="item product product-item">
+					  <div class="product-item-info per-product category-products-grid" data-container="product-grid">
+						 <div class="images-container">
+							 <div class="product details product-item-details products-textlink">
+							   <h2 class="product name product-name product-item-name">
+								  <a class="product-item-link" href="<?php echo $mediaUrl.$availableDis->getDistrictImage(); ?>" title="<?php echo $availableDis->getPopularProduct(); ?>">
+								  <?php echo $availableDis->getDistrictName(); ?>
+								  </a>
+							   </h2>
+							</div>
+							<div class="product-hover">
+							   <a href="<?php echo $mediaUrl.$availableDis->getDistrictImage(); ?>" class="product photo product-item-photo" tabindex="-1">
+							   <span class="product-image-container" style="width:370px;">
+							   <span class="product-image-wrapper" style="padding-bottom: 128.10810810811%;">
+							   <img class="product-image-photo" src="<?php echo $mediaUrl.$availableDis->getDistrictImage(); ?>" max-width="370" max-height="474" alt="Stone Wash 4*6"></span>
+							   </span>
+							   </a>
+							</div>
+							<div class="product details product-item-details products-textlink">
+							   <h2 class="product name product-name product-item-name">
+								  <a class="product-item-link" href="<?php echo $mediaUrl.$availableDis->getDistrictImage(); ?>" title="<?php echo $availableDis->getPopularProduct(); ?>">
+								  <?php echo $availableDis->getPopularProduct(); ?>
+								  </a>
+							   </h2>
+							</div>
+						 </div>
+					  </div>
+					  
+				   </li>
+				   <?php	} ?>
+				</ol>
+			 </div>
+			<?php else: ?>
+				<div class="message info empty">
+				<div><?php echo __('We cant find products matching the selection.'); ?></div>
+			 </div>
+			<?php endif; ?>
+      </div>
+      <div class="sidebar sidebar-main"></div>
+      <div class="sidebar sidebar-additional">
+         <ul class="uc-sidebar-menu">
+            <?php	
+               foreach($cmsPages as $cmsPage){
+               ?>
+            <li><?php echo $cmsPage->getTitle(); ?></li>
+            <?php	} ?>
+         </ul>
+      </div>
+   </div>
+</div>
