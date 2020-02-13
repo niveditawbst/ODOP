@@ -94,7 +94,7 @@ $mediaUrl =  $objectManager->get('Magento\Store\Model\StoreManagerInterface')
             <?php	
                foreach($cmsPages as $cmsPage){
                ?>
-            <li><?php echo $cmsPage->getTitle(); ?></li>
+            <li><a href="<?php echo $this->getUrl($cmsPage->getIdentifier()); ?>"><?php echo $cmsPage->getTitle(); ?></a></li>
             <?php	} ?>
          </ul>
       </div>
