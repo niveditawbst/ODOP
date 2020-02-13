@@ -24,12 +24,28 @@ $mediaUrl =  $objectManager->get('Magento\Store\Model\StoreManagerInterface')
 				<ol class="products list items product-items">
 					<?php foreach($availableDistrict as $availableDis){
 						
-						//~ $link = 'javascript:void(0)';
-						$link = 'https://odopmart.com/custom-chikankari-zari-zardozi.html';
+						$link = 'javascript:void(0)';
+						//~ $link = 'https://odopmart.com/custom-chikankari-zari-zardozi.html';
 						if($availableDis->getDistrictName() == 'Agra'){
 							$link = 'https://odopmart.com/custom-leather.html';
 						}else if($availableDis->getDistrictName() == 'Lucknow'){
 							$link = 'https://odopmart.com/custom-chikankari-zari-zardozi.html';
+						}else if($availableDis->getDistrictName() == 'Varanasi'){
+							$link = 'https://odopmart.com/clothing/silk.html';
+						}else if($availableDis->getDistrictName() == 'Bhadohi'){
+							$link = 'https://odopmart.com/accessories/carpet.html';
+						}else if($availableDis->getDistrictName() == 'Aligarh'){
+							$link = 'https://odopmart.com/accessories/brass-statue.html';
+						}else if($availableDis->getDistrictName() == 'Muradabad'){
+							$link = 'https://odopmart.com/accessories/brass-handicraft.html';
+						}else if($availableDis->getDistrictName() == 'Mirzapur'){
+							$link = 'https://odopmart.com/accessories/carpet.html';
+						}else if($availableDis->getDistrictName() == 'Khujra'){
+							$link = 'https://odopmart.com/accessories/pottery.html';
+						}else if($availableDis->getDistrictName() == 'Saharanpur'){
+							$link = 'https://odopmart.com/accessories/wood.html';
+						}else if($availableDis->getDistrictName() == 'Meerut'){
+							$link = 'https://odopmart.com/accessories/bedroom-linen.html';
 						}
 						
 						
