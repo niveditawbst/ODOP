@@ -21,7 +21,10 @@ if(!count($slider)) return;
 			<div class="item alo-slider <?php echo $type ?>"
                 <?php echo ($item['video_url']) ? 'data-video="'. $item['video_url'] .'"' : ''; ?> 
             >
-    			<a href="<?php echo isset($item['link']) ? $item['link'] : '#'; ?>">
+<!--
+    			<a href="<?php //echo isset($item['link']) ? $item['link'] : '#'; ?>">
+-->
+    			<a href="javascript:void(0)">
     				<img class="img-responsive" src="<?php echo $this->getImage($image)?>" alt="<?php echo __($label) ?>" title="<?php echo __($label) ?>" />
     			</a>
 				<?php echo isset($item['caption']) ? $item['caption'] : ''; ?>
