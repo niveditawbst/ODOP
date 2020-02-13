@@ -93,9 +93,11 @@ $mediaUrl =  $objectManager->get('Magento\Store\Model\StoreManagerInterface')
          <ul class="uc-sidebar-menu"><span class="uc-sidebar-title"><?php echo __('About ODOP');?></span>
             <?php	
                foreach($cmsPages as $cmsPage){
+				   if(in_array($cmsPage->getIdentifier(), ['home', 'president-message', 'prime-minister-message', 'chief-minister-message', 'about-us'])){
                ?>
             <li><a href="<?php echo $this->getUrl($cmsPage->getIdentifier()); ?>"><?php echo $cmsPage->getTitle(); ?></a></li>
-            <?php	} ?>
+            <?php }
+            } ?>
          </ul>
       </div>
    </div>
