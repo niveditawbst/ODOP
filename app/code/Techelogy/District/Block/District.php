@@ -42,7 +42,7 @@ class District extends \Magento\Framework\View\Element\Template
     public function getAvailableDistrict()
     {
 		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-		$district = $objectManager->create('Techelogy\District\Model\District')->getCollection();
+		$district = $objectManager->create('Techelogy\District\Model\District')->getCollection()->setOrder('sort_order', 'ASC');
 		return $district;
     }	
     
