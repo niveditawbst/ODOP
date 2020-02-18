@@ -91,3 +91,14 @@
 		</div>		
 	</div>
 </header>
+
+
+<script>
+	//~ hover-box actions
+	require(['jquery','!domReady'],function($){
+		setTimeout(function(){ 
+			$('.item .hover-box').css('display', 'block');
+			$('.item .images-container .product-hover .quickview').css('display', 'block');
+        }, 2000);
+    });
+</script>
