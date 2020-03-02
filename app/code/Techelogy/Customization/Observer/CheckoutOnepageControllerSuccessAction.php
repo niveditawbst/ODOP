@@ -40,7 +40,7 @@ class CheckoutOnepageControllerSuccessAction implements ObserverInterface
 		  }
 	  }	
 	 
-	 //	send SMS
+	 //	send SMS 
 	 if(count($customerTelephone) > 0 && $enableSMS){
 		try{
 			$objectManager->create('Techelogy\Customization\Helper\Data')->sendSMS($customerTelephone);
