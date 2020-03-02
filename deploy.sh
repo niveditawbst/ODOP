@@ -14,20 +14,20 @@ __deployNow() {
 
 
 
-sudo rm -rf var/di/* var/generation/* var/cache/* var/log/* var/page_cache/* var/session/* var/view_preprocessed/* pub/static/*
-sudo php bin/magento setup:upgrade
-sudo php bin/magento setup:di:compile
-sudo php bin/magento setup:static-content:deploy -f en_US
-sudo php bin/magento cache:clean
-sudo php bin/magento cache:flush
-sudo php bin/magento indexer:reindex
+rm -rf var/di/* var/generation/* var/cache/* var/log/* var/page_cache/* var/session/* var/view_preprocessed/* pub/static/*
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy -f en_US
+php bin/magento cache:clean
+php bin/magento cache:flush
+php bin/magento indexer:reindex
 
 
 
 
 
 
-    sudo chmod -R 777 var generated pub/static pub/media
+    chmod -R 777 var generated pub/static pub/media
 
     echo "*************************"
     echo "     Deployment done"
