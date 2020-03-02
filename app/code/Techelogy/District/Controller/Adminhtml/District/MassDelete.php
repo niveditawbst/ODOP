@@ -27,4 +27,8 @@ class MassDelete extends \Magento\Backend\App\Action
         }
 		 $this->_redirect('*/*/');
     }
+    
+    protected function _isAllowed(){
+		return $this->_authorization->isAllowed('Techelogy_District::techelogy_district_index');
+	}
 }
