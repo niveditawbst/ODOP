@@ -39,4 +39,8 @@ class Index extends Action
 		$this->resultPage ->getConfig()->getTitle()->set((__('District')));
 		return $this->resultPage;
     }
+    
+    protected function _isAllowed(){
+		return $this->_authorization->isAllowed('Techelogy_District::techelogy_district_index');
+	}
 }
