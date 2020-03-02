@@ -40,4 +40,8 @@ class Edit extends \Magento\Backend\App\Action
         $this->_view->getLayout()->initMessages();
         $this->_view->renderLayout();
     }
+    
+    protected function _isAllowed(){
+		return $this->_authorization->isAllowed('Techelogy_District::techelogy_district_index');
+	}
 }

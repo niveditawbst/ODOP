@@ -32,7 +32,9 @@ class Save extends \Magento\Backend\App\Action
 				}
 			}
 			else{
-				$data['district_image'] = $data['district_image']['value'];
+				if(isset($data['district_image']['value'])){
+					$data['district_image'] = $data['district_image']['value'];
+				}
 			} 
 			$id = $this->getRequest()->getParam('id');
             if ($id) {
@@ -67,4 +69,8 @@ class Save extends \Magento\Backend\App\Action
         }
         $this->_redirect('*/*/');
     }
+    
+    protected function _isAllowed(){
+		return $this->_authorization->isAllowed('Techelogy_District::techelogy_district_index');
+	}
 }
