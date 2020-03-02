@@ -15,6 +15,10 @@
                    <label>Newsletter Discount Coupon Code</label>
                    <comment>Code must be available in Cart Price Rule and will be applicable if customer subscribed.</comment>
                 </field>
+                <field id="enable_sms" translate="label" type="select" showInDefault="1"  sortOrder="8"  showInWebsite="1" showInStore="1">
+					<label>Enable SMS</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
                 <field id="sendsmscopy" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                    <label>Send Order Confirmation SMS Copy</label>
                    <comment>Add Contact number comma(,) separated.</comment>
