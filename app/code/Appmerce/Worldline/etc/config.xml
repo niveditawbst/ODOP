@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2019 Appmerce - Applications for Ecommerce
+ * http://www.appmerce.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <appmerce_worldline_shared>
+            	<model>Appmerce\Worldline\Model\Worldline</model>
+            	<key_version>1</key_version>
+                <secret_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+            </appmerce_worldline_shared>
+            <appmerce_worldline_bcmc>
+            	<model>Appmerce\Worldline\Model\Api\Bcmc</model>
+            	<title>Bancontact / Mister Cash</title>
+                <active>0</active>
+                <order_status>pending</order_status>
+                <pending_status>pending_payment</pending_status>
+                <processing_status>processing</processing_status>
+                <allowspecific>0</allowspecific>
+                <usecache>0</usecache>
+            </appmerce_worldline_bcmc>
+            <appmerce_worldline_ideal>
+            	<model>Appmerce\Worldline\Model\Api\Ideal</model>
+            	<title>iDEAL</title>
+                <active>0</active>
+                <order_status>pending</order_status>
+                <pending_status>pending_payment</pending_status>
+                <processing_status>processing</processing_status>
+                <allowspecific>0</allowspecific>
+                <usecache>0</usecache>
+            </appmerce_worldline_ideal>
+            <appmerce_worldline_visa>
+            	<model>Appmerce\Worldline\Model\Api\Visa</model>
+            	<title>VISA</title>
+                <active>0</active>
+                <order_status>pending</order_status>
+                <pending_status>pending_payment</pending_status>
+                <processing_status>processing</processing_status>
+                <allowspecific>0</allowspecific>
+                <usecache>0</usecache>
+            </appmerce_worldline_visa>
+            <appmerce_worldline_vpay>
+            	<model>Appmerce\Worldline\Model\Api\Vpay</model>
+            	<title>VPAY</title>
+                <active>0</active>
+                <order_status>pending</order_status>
+                <pending_status>pending_payment</pending_status>
+                <processing_status>processing</processing_status>
+                <allowspecific>0</allowspecific>
+                <usecache>0</usecache>
+            </appmerce_worldline_vpay>
+            <appmerce_worldline_mastercard>
+            	<model>Appmerce\Worldline\Model\Api\Mastercard</model>
+            	<title>MasterCard</title>
+                <active>0</active>
+                <order_status>pending</order_status>
+                <pending_status>pending_payment</pending_status>
+                <processing_status>processing</processing_status>
+                <allowspecific>0</allowspecific>
+                <usecache>0</usecache>
+            </appmerce_worldline_mastercard>
+            <appmerce_worldline_maestro>
+            	<model>Appmerce\Worldline\Model\Api\Maestro</model>
+            	<title>Maestro</title>
+                <active>0</active>
+                <order_status>pending</order_status>
+                <pending_status>pending_payment</pending_status>
+                <processing_status>processing</processing_status>
+                <allowspecific>0</allowspecific>
+                <usecache>0</usecache>
+            </appmerce_worldline_maestro>
+        </payment>
+    </default>
+</config>
