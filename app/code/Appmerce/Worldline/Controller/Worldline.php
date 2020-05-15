@@ -146,8 +146,8 @@ abstract class Worldline extends \Magento\Framework\App\Action\Action implements
         $storeId = $order->getStoreId();
 
         $gateways = array(
-            '0' => 'https://payment-webinit.sips-atos.com/paymentInit',
-            '1' => 'https://payment-webinit.simu.sips-atos.com/paymentInit'
+            '0' => 'https://ipg.in.worldline.com/doMEPayRequest', //producttion url
+            '1' => 'https://cgt.in.worldline.com/ipg/doMEPayRequest' //test url
         );
 
         $testMode = $this->getServiceConfigData('test_mode');
@@ -223,6 +223,99 @@ abstract class Worldline extends \Magento\Framework\App\Action\Action implements
      * @param \Magento\Sales\Model\Order $order
      * @return array
      */
+    //~ public function getPostData($order)
+    //~ {
+        //~ $storeId = $order->getStoreId();
+        //~ $address = $order->getBillingAddress();
+        //~ $paymentMethodCode = $order->getPayment()->getMethod();
+        //~ $paymentMean = $this->getPaymentMean($paymentMethodCode);
+        //~ $customerId = $order->getCustomerId();
+        //~ $secretKey = $this->getServiceConfigData('secret_key', $storeId);
+        //~ $currencyCode = $this->getCurrencyCode();
+        
+        //~ // Prepare data fields
+        //~ $data = array();
+        //~ $data['currencyCode'] = $this->getCurrencyDigits($currencyCode);
+        //~ $data['merchantId'] = $this->getServiceConfigData('merchant_id', $storeId);
+        //~ $data['normalReturnUrl'] = preg_replace('/\?.*/', '', $this->getApiUrl('returnUser', $storeId));
+        //~ $data['amount'] = $this->_getGrandTotal($order, $currencyCode);
+        //~ // Make reference unique with REQUEST_TIME to prevent blocked transactions
+        //~ $data['transactionReference'] = $order->getId() . time();
+        //~ $data['keyVersion'] = $this->getServiceConfigData('key_version', $storeId);
+        //~ $data['automaticResponseUrl'] = preg_replace('/\?.*/', '', $this->getPushUrl('response', $storeId));
+        //~ #captureDay
+        //~ #captureMode
+        //~ #customerId
+        //~ $data['customerIpAddress'] = $this->getRealIpAddress();
+        //~ $data['customerLanguage'] = $this->getLanguageCode();
+        //~ #expirationDate
+        //~ #hashSalt1
+        //~ #hashSalt2
+        //~ #invoiceReference
+        //~ #merchantSessionId
+        //~ #merchantTransactionDateTime
+        //~ #merchantWalletID
+        //~ #orderChannel
+        //~ $data['orderId'] = $order->getIncrementId();
+        //~ $data['paymentMeanBrandList'] = $paymentMean['brand'];
+        //~ #paymentPattern
+        //~ #returnContext
+        //~ #statementReference
+        //~ #templateName
+        //~ #transactionActors
+        //~ #transactionOrigin
+        
+        //~ // Optional fields related to fraud
+        //~ #fraudData.allowedCardArea
+        //~ #fraudData.allowedCardCountryList
+        //~ #fraudData.allowedIpArea
+        //~ #fraudData.allowedIpCountryList
+        //~ #fraudData.bypass3DS
+        //~ #fraudData.bypassCtrlList
+        //~ #fraudData.bypassInfoList
+        //~ #fraudData.deniedCardArea
+        //~ #fraudData.deniedCardCountryList
+        //~ #fraudData.deniedIpArea
+        //~ #fraudData.deniedIpCountryList
+        
+        //~ // Optional fields relating to payment pages
+        //~ $data['paypageData.bypassReceiptPage'] = 'Y';
+        
+        //~ // Optional fields relating to payment methods
+        //~ // For PayPal
+        //~ #paymentMeanData.paypal.landingPage
+        //~ #paymentMeanData.paypal.addrOVerride
+        //~ #paymentMeanData.paypal.invoiceId
+        //~ #paymentMeanData.paypal.dupFlag
+        //~ #paymentMeanData.paypal.dupDesc
+        //~ #paymentMeanData.paypal.dupCustom
+        //~ #paymentMeanData.paypal.dupType
+        //~ #paymentMeanData.paypal.mobile
+
+        //~ // For SDD
+        //~ #paymentMeanData.sdd.mandateAuthentMethod
+        //~ #paymentMeanData.sdd.mandateUsage
+
+        //~ // Optional fields for payment in N installments
+        //~ #installmentData.number
+        //~ #installmentData.datesList
+        //~ #installmentData.transactionReferencesList
+        //~ #installmentData.amountsList
+        
+        //~ // Construct datastring
+        //~ $dataString = array();
+        //~ foreach ($data as $field => $value) {
+            //~ $dataString[] = $field . '=' . $value;
+        //~ }
+        
+        //~ // Prepare post fields
+        //~ $fields = array();
+        //~ $fields[] = array('name' => 'Data', 'value' => implode('|', $dataString));
+        //~ $fields[] = array('name' => 'InterfaceVersion', 'value' => self::INTERFACE_VERSION);
+        //~ $fields[] = array('name' => 'Seal', 'value' => hash('sha256', implode('|', $dataString) . $secretKey));
+        //~ return $fields;
+    //~ }
+
     public function getPostData($order)
     {
         $storeId = $order->getStoreId();
@@ -231,90 +324,59 @@ abstract class Worldline extends \Magento\Framework\App\Action\Action implements
         $paymentMean = $this->getPaymentMean($paymentMethodCode);
         $customerId = $order->getCustomerId();
         $secretKey = $this->getServiceConfigData('secret_key', $storeId);
+        //~ $secretKey = '6375b97b954b37f956966977e5753ee6';
         $currencyCode = $this->getCurrencyCode();
-        
-        // Prepare data fields
-        $data = array();
-        $data['currencyCode'] = $this->getCurrencyDigits($currencyCode);
-        $data['merchantId'] = $this->getServiceConfigData('merchant_id', $storeId);
-        $data['normalReturnUrl'] = preg_replace('/\?.*/', '', $this->getApiUrl('returnUser', $storeId));
-        $data['amount'] = $this->_getGrandTotal($order, $currencyCode);
-        // Make reference unique with REQUEST_TIME to prevent blocked transactions
-        $data['transactionReference'] = $order->getId() . time();
-        $data['keyVersion'] = $this->getServiceConfigData('key_version', $storeId);
-        $data['automaticResponseUrl'] = preg_replace('/\?.*/', '', $this->getPushUrl('response', $storeId));
-        #captureDay
-        #captureMode
-        #customerId
-        $data['customerIpAddress'] = $this->getRealIpAddress();
-        $data['customerLanguage'] = $this->getLanguageCode();
-        #expirationDate
-        #hashSalt1
-        #hashSalt2
-        #invoiceReference
-        #merchantSessionId
-        #merchantTransactionDateTime
-        #merchantWalletID
-        #orderChannel
-        $data['orderId'] = $order->getIncrementId();
-        $data['paymentMeanBrandList'] = $paymentMean['brand'];
-        #paymentPattern
-        #returnContext
-        #statementReference
-        #templateName
-        #transactionActors
-        #transactionOrigin
-        
-        // Optional fields related to fraud
-        #fraudData.allowedCardArea
-        #fraudData.allowedCardCountryList
-        #fraudData.allowedIpArea
-        #fraudData.allowedIpCountryList
-        #fraudData.bypass3DS
-        #fraudData.bypassCtrlList
-        #fraudData.bypassInfoList
-        #fraudData.deniedCardArea
-        #fraudData.deniedCardCountryList
-        #fraudData.deniedIpArea
-        #fraudData.deniedIpCountryList
-        
-        // Optional fields relating to payment pages
-        $data['paypageData.bypassReceiptPage'] = 'Y';
-        
-        // Optional fields relating to payment methods
-        // For PayPal
-        #paymentMeanData.paypal.landingPage
-        #paymentMeanData.paypal.addrOVerride
-        #paymentMeanData.paypal.invoiceId
-        #paymentMeanData.paypal.dupFlag
-        #paymentMeanData.paypal.dupDesc
-        #paymentMeanData.paypal.dupCustom
-        #paymentMeanData.paypal.dupType
-        #paymentMeanData.paypal.mobile
+      
+        $mId = $this->getServiceConfigData('merchant_id', $storeId);
+        //~ $mId = 'WL0000000027698';
+		$trnAmt = number_format($order->getBaseGrandTotal() * 100, 0, '.', '');
+		$orderId = $order->getIncrementId();
+		$trnCurrency = $currencyCode;
+		$trnRemarks =  'Order Payment' ;
+		$meTransReqType = 'S';
+		$recurrPeriod = '';
+		$recurrDay = '';
+		$noOfRecurring = '';
+		$responseUrl = preg_replace('/\?.*/', '', $this->getApiUrl('returnUser', $storeId));
+		$addField1 = '';
+		$addField2 = '';
+		$addField3 = '';
+		$addField4 = '';
+		$addField5 = '';
+		$addField6 = '';
+		$addField7 = '';
+		$addField8 = '';
+		$addField9 = 'NA';
+		$addField10 = 'NA';
+		
+		$message =  $mId  . "|" . $orderId  . "|" . $trnAmt  . "|" . 
+			$trnCurrency  . "|" . $trnRemarks  . "|" . $meTransReqType  . "|" . 
+			$recurrPeriod  . "|" . $recurrDay  . "|" . $noOfRecurring  . "|" . 
+			$responseUrl  . "|" . $addField1  . "|" . $addField2  . "|" . 
+			$addField3  . "|" . $addField4  . "|" . $addField5  . "|" . 
+			$addField6  . "|" . $addField7  . "|" . $addField8  . "|" . 
+			$addField9  . "|" . $addField10 ;
+			
+			
+		//~ echo '======'.$message;exit;
+		return $this->encryptValue( $message, $secretKey );	
 
-        // For SDD
-        #paymentMeanData.sdd.mandateAuthentMethod
-        #paymentMeanData.sdd.mandateUsage
-
-        // Optional fields for payment in N installments
-        #installmentData.number
-        #installmentData.datesList
-        #installmentData.transactionReferencesList
-        #installmentData.amountsList
-        
-        // Construct datastring
-        $dataString = array();
-        foreach ($data as $field => $value) {
-            $dataString[] = $field . '=' . $value;
-        }
-        
-        // Prepare post fields
-        $fields = array();
-        $fields[] = array('name' => 'Data', 'value' => implode('|', $dataString));
-        $fields[] = array('name' => 'InterfaceVersion', 'value' => self::INTERFACE_VERSION);
-        $fields[] = array('name' => 'Seal', 'value' => hash('sha256', implode('|', $dataString) . $secretKey));
-        return $fields;
     }
+    
+    function encryptValue($inputVal, $secureKey) {
+		$key = '';
+		for($i = 0; $i < strlen ( $secureKey ) - 1; $i += 2) {
+			$key .= chr ( hexdec ( $secureKey [$i] . $secureKey [$i + 1] ) );
+		}
+		
+		$block = mcrypt_get_block_size ( MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB );
+		$pad = $block - (strlen ( $inputVal ) % $block);
+		$inputVal .= str_repeat ( chr ( $pad ), $pad );
+		
+		$encrypted_text = bin2hex ( mcrypt_encrypt ( MCRYPT_RIJNDAEL_128, $key, $inputVal, MCRYPT_MODE_ECB ) );
+		
+		return $encrypted_text;
+	}
 
     /**
      * Get customer IP address
@@ -322,9 +384,9 @@ abstract class Worldline extends \Magento\Framework\App\Action\Action implements
      * @return ipaddress
      */
     public function getRealIpAddress() {
-	$om = \Magento\Framework\App\ObjectManager::getInstance();
-	$a = $om->get('Magento\Framework\HTTP\PhpEnvironment\RemoteAddress');
-	return $a->getRemoteAddress();
+		$om = \Magento\Framework\App\ObjectManager::getInstance();
+		$a = $om->get('Magento\Framework\HTTP\PhpEnvironment\RemoteAddress');
+		return $a->getRemoteAddress();
     }
     
     /**
@@ -408,6 +470,7 @@ abstract class Worldline extends \Magento\Framework\App\Action\Action implements
             'NOK' => '578',
             'SEK' => '752',
             'DKK' => '208',
+            //~ 'INR' => '208',
         );
 
         return $currencies[$iso3];
@@ -456,7 +519,13 @@ abstract class Worldline extends \Magento\Framework\App\Action\Action implements
      */
     protected function getJsonData($order)
     {
-        return array('url' => $this->getGatewayUrl($order), 'fields' => $this->getPostData($order));
+		$storeId = $order->getStoreId();
+		$postField[0]['name'] = 'merchantRequest';
+		$postField[0]['value'] = $this->getPostData($order);
+		$postField[1]['name'] = 'MID';
+		$postField[1]['value'] = $this->getServiceConfigData('merchant_id', $storeId);
+		
+        return array('url' => $this->getGatewayUrl($order), 'fields' => $postField);
     }
     
     /**
@@ -673,7 +742,7 @@ abstract class Worldline extends \Magento\Framework\App\Action\Action implements
     /**
      * Restore cart
      */
-    public function restoreCart()
+    public function restoreCart($message = null)
     {
         $lastQuoteId = $this->checkoutSession->getLastQuoteId();
         if ($quote = $this->_getQuote()->loadByIdWithoutStore($lastQuoteId)) {
@@ -683,7 +752,10 @@ abstract class Worldline extends \Magento\Framework\App\Action\Action implements
             $this->checkoutSession->setQuoteId($lastQuoteId);
         }
 
-        $message = __('Payment failed. Please try again.');
+		if(!$message){
+			$message = __('Payment failed. Please try again.');
+		}
+		
         $this->messageManager->addError($message);
     }
 }

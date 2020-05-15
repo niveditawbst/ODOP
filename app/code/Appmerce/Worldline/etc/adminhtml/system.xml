@@ -54,6 +54,7 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>
+<!--
             <group id="appmerce_worldline_bcmc" translate="label" type="text" sortOrder="79" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Worldline - Bancontact / Mister Cash</label>
                 <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
@@ -95,6 +96,7 @@
                     <frontend_class>validate-number</frontend_class>
                 </field>
             </group>
+-->
             <group id="appmerce_worldline_ideal" translate="label" type="text" sortOrder="79" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Worldline - iDEAL</label>
                 <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
@@ -136,6 +138,7 @@
                     <frontend_class>validate-number</frontend_class>
                 </field>
             </group>
+<!--
             <group id="appmerce_worldline_visa" translate="label" type="text" sortOrder="79" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Worldline - Visa</label>
                 <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
@@ -300,6 +303,7 @@
                     <frontend_class>validate-number</frontend_class>
                 </field>
             </group>
+-->
         </section>
     </system>
 </config>
