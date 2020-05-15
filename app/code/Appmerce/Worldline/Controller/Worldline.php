@@ -330,7 +330,7 @@ abstract class Worldline extends \Magento\Framework\App\Action\Action implements
         $mId = $this->getServiceConfigData('merchant_id', $storeId);
         //~ $mId = 'WL0000000027698';
 		$trnAmt = number_format($order->getBaseGrandTotal() * 100, 0, '.', '');
-		$orderId = $order->getIncrementId();
+		$orderId = $order->getIncrementId().'-'.time();
 		$trnCurrency = $currencyCode;
 		$trnRemarks =  'Order Payment' ;
 		$meTransReqType = 'S';
