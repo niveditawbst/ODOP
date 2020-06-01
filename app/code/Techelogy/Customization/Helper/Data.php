@@ -5,13 +5,36 @@
 namespace Techelogy\Customization\Helper;
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
-
+	protected $_wishlistFactory;
+	protected $_sessionFactory;
 	/**
      * @param \Magento\Framework\App\Helper\Context $context
      */
-	public function __construct(\Magento\Framework\App\Helper\Context $context
+	public function __construct(
+		\Magento\Framework\App\Helper\Context $context,
+		\Magento\Wishlist\Model\WishlistFactory $wishlistFactory,
+		\Magento\Customer\Model\SessionFactory $sessionFactory
 	) {
+		$this->_wishlistFactory = $wishlistFactory;
+		$this->_sessionFactory = $sessionFactory;
 		parent::__construct($context);
+	}
+	
+	public function checkWishlistItem($productId){
+		$isLoggedIn = $this->_sessionFactory->create()->isLoggedIn();
+		$wishlistItem = false;
+		if($isLoggedIn && $productId){
+			$customerId = $this->_sessionFactory->create()->getCustomer()->getId();
+			$wishlistCollection = $this->_wishlistFactory->create()->loadByCustomerId($customerId, true)->getItemCollection();
+			
+			foreach($wishlistCollection as $item){
+				if($productId == $item->getProduct()->getId()){
+					$wishlistItem = true;
+					break;
+				}
+			}
+		}
+		return $wishlistItem;
 	}
 	
 	public function sendSMS($contactNo){
