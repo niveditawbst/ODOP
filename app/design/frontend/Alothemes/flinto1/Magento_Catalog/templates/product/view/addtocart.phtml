@@ -12,6 +12,8 @@
 $_product = $block->getProduct();
 $_wishlistSubmitParams = $this->helper('Magento\Wishlist\Helper\Data')->getAddParams($_product);
 $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');
+$customHelper = $this->helper('Techelogy\Customization\Helper\Data');
+
 ?>
 <?php $_product = $block->getProduct(); ?>
 <?php $buttonTitle = __('Add to Cart'); ?>
@@ -57,11 +59,17 @@ $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');
         </div>
         <div class="product-social-links clearfix">
 			<div class="product-addto-links add-to-links" data-role="add-to-links">
-				<?php $_product = $block->getProduct() ?>
-				
+				<?php $_product = $block->getProduct() ?>				
+				<?php 
+					$wislistClass = null;
+					if($customHelper->checkWishlistItem($_product->getId())){
+						$wislistClass = 'wishlist-added';
+					}
+				?>
+											
 				<?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow()) : ?>
 					<a href="#"
-						class="action towishlist alotheme-tooltip"
+						class="action towishlist alotheme-tooltip <?php echo $wislistClass; ?>"
 						data-post='<?php /* @escapeNotVerified */ echo $_wishlistSubmitParams; ?>'
 						data-action="add-to-wishlist">
 						<i class="ion-heart icons"></i>
