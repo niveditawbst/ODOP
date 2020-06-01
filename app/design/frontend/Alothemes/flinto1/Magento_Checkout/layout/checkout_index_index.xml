@@ -52,24 +52,5 @@
 			</arguments>
 			</referenceBlock>
         <referenceContainer name="page.messages" remove="true"/>
-       
-       <!-- To disable shipping rate auto apply on cart page--> 
-        <referenceBlock name="checkout.cart.totals">
-			<arguments>
-				<argument name="jsLayout" xsi:type="array">
-					<item name="components" xsi:type="array">
-						<item name="block-totals" xsi:type="array">
-							<item name="children" xsi:type="array">
-								<item name="shipping" xsi:type="array">
-									<item name="config" xsi:type="array">
-										<item name="componentDisabled" xsi:type="boolean">true</item>
-									</item>
-								</item>
-							</item>
-						</item>
-					</item>
-				</argument>
-			</arguments>
-		</referenceBlock>
     </body>
 </page>
