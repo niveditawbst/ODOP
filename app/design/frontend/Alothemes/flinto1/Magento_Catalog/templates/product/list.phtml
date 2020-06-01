@@ -18,7 +18,9 @@ use Magento\Framework\App\Action\Action;
 <?php
 $_productCollection = $block->getLoadedProductCollection();
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
+$customHelper = $this->helper('Techelogy\Customization\Helper\Data');
 $_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
+
 ?>
 <?php if (!$_productCollection->count()): ?>
     <div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
@@ -246,8 +248,14 @@ $_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
 										</div>
 										<div data-role="add-to-links" class="actions-secondary add-to-links"<?php echo strpos($pos, $viewMode . '-secondary') ? $position : ''; ?>>											
 											<?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow()): ?>
+											<?php 
+												$wislistClass = null;
+												if($customHelper->checkWishlistItem($_product->getId())){
+													$wislistClass = 'wishlist-added';
+												}
+											?>
 												<a href="#"
-												   class="action towishlist link-wishlist alotheme-tooltip"
+												   class="action towishlist link-wishlist alotheme-tooltip <?php echo $wislistClass; ?>"
 												   title="<?php echo $block->escapeHtml(__('Wish List')); ?>"
 												   aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
 												   data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_product); ?>'
