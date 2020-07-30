@@ -7,7 +7,7 @@
 -->
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <css src="mage/gallery/gallery.css"/>
     </head>
     <update handle="catalog_product_opengraph" />
@@ -30,7 +30,7 @@
 				</arguments>
 			</block>
 			<referenceBlock name="wishlist_sidebar" remove="true"/>
-			<referenceBlock name="catalog.compare.sidebar" remove="true"/>
+			<!-- <referenceBlock name="catalog.compare.sidebar" remove="true"/> -->
 			<referenceBlock name="sale.reorder.sidebar" remove="true"/>
         </referenceContainer>
         <referenceContainer name="content">
