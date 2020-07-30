@@ -76,14 +76,14 @@ $customHelper = $this->helper('Techelogy\Customization\Helper\Data');
 						<span class="action-text"><?php /* @escapeNotVerified */ echo __('Wish List')?></span>
 					</a>
 				<?php endif; ?>
-<!--
-				<a href="#" data-post='<?php /* @escapeNotVerified */ //echo $compareHelper->getPostDataParams($_product);?>'
+
+				<a href="#" data-post='<?php /* @escapeNotVerified */ echo $compareHelper->getPostDataParams($_product);?>'
 					data-role="add-to-links"
 					class="action tocompare alotheme-tooltip">
 					<i class="ion-stats-bars icons"></i>
-					<span class="action-text"><?php /* @escapeNotVerified */// echo __('Compare')?></span>
+					<span class="action-text"><?php /* @escapeNotVerified */ echo __('Compare')?></span>
 				</a>
--->
+
 				<?php if ($block->canEmailToFriend()): ?>
 <!--
 					<a href="<?php /* @escapeNotVerified */ //echo $this->helper('Magento\Catalog\Helper\Product')->getEmailToFriendUrl($_product) ?>"
