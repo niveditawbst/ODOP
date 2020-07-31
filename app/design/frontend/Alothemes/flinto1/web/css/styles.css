@@ -1703,7 +1703,7 @@ ul.magictabs{padding:0}
 .item .add-to-links a {color: #666;font-weight:normal;font-size: 20px;padding:0;display: inline-block;vertical-align: middle;float: left;width: 50px;height: 50px;line-height: 50px;text-align: center;overflow: visible;border-style: solid;border-width: 0 0 0 1px;border-color: #e6e6e6;}
 .item .add-to-links a:hover{color: #ea5648;}
 .item .add-to-links a .icon{font-size: 20px;width: 39px;height: 39px;}
-.grid.products-grid .item .add-to-links a.tocompare{line-height: 42px;display: none;}
+.grid.products-grid .item .add-to-links a.tocompare{line-height: 42px;}
 .item .add-to-links a.tocompare .icon{font-size: 22px;}
 
 .box-products .content-products,.auto-height .products.products-grid{position: relative;}
@@ -2862,4 +2862,15 @@ button.quickview:hover, button.quickview:focus{border: 0;}
 @media (min-width: 1201px) and (max-width: 1500px) {
 	.category-view{min-height: 325px;}
 	.page-products .page-title-wrapper h1 span, .pagecrumbs-title{font-size: 35px;}
+}
+.catalog-category-view .item .actions-cart .button.btn-cart span {
+	font-size: 14px !important;
+	margin-right: 40px;
+}
+.catalog-category-view .item .add-to-links a {
+    width: 44px !important;
+}
+.catalog-category-view .grid.products-grid .item .add-to-links a.tocompare {
+    line-height: 42px;
+    display: block;
 }
