@@ -17,6 +17,14 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$headers = getallheaders();
+$host = $headers['Host'];
+if(!in_array($host, ['odopmart.com'])){
+    exit(0);
+}
 
 try {
     require __DIR__ . '/app/bootstrap.php';
@@ -33,10 +41,6 @@ HTML;
     exit(1);
 }
 
-
-error_reporting(E_ALL);
-
-ini_set('display_errors',1);
 $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
 /** @var \Magento\Framework\App\Http $app */
 $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
