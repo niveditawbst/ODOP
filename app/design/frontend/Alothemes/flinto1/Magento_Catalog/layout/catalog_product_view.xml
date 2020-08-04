@@ -57,7 +57,7 @@
 						<container name="product.primary.column" htmlTag="div" htmlClass="product-primary-column col-md-9 col-sm-9 col-xs-12" before="-">
 							<container name="product.inner" htmlTag="div" htmlClass="row">
 								<container name="product.info.main" htmlTag="div" htmlClass="product-info-main product-shop col-md-7 col-sm-7 col-xs-12" after="product.info.media">
-									<container name="product.shopcontent" htmlTag="div" htmlClass="product-shop-content clearfix">
+									<container name="product.shopcontent" htmlTag="div" htmlClass="product-shop-content clearfix" before="-">
 										<container name="product.content.left" htmlTag="div" htmlClass="shop-content-left">
 											<container name="product.info.title" label="Product info auxiliary container" htmlTag="div" htmlClass="product-info-title">
 												<block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml"/>
