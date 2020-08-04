@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="tact" translate="label" sortOrder="110">
+            <label>TACT</label>
+        </tab>
+        <section id="tact" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>General Configuration</label>
+            <tab>tact</tab>
+            <resource>Techelogy_Customization::tact_configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="discountCoupon" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                   <label>Newsletter Discount Coupon Code</label>
+                   <comment>Code must be available in Cart Price Rule and will be applicable if customer subscribed.</comment>
+                </field>
+                <field id="enable_sms" translate="label" type="select" showInDefault="1"  sortOrder="8"  showInWebsite="1" showInStore="1">
+					<label>Enable SMS</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+                <field id="sendsmscopy" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                   <label>Send Order Confirmation SMS Copy</label>
+                   <comment>Add Contact number comma(,) separated.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+
