@@ -1,0 +1,80 @@
+
+.wishlist-index-index .products-grid.wishlist .product-item:nth-child(3n+1) {
+    clear: none;
+}
+.wishlist-index-index .products-grid.wishlist .product-item:nth-child(2n+1) {
+    clear: none;
+}
+.wishlist-index-index .products-grid.wishlist .product-item:nth-child(3n+1) {
+    clear: none;
+}
+
+@media only screen and (max-width: 767px){
+    .wishlist-index-index .products-grid.wishlist .product-item {
+        width: 33%;
+    }
+    .wishlist-index-index .products-grid.wishlist .product-item:nth-child(2n+1) {
+        clear: none;
+    }
+    .wishlist-index-index .products-grid.wishlist .product-item {
+        padding: 20px 16px 20px 20px !important;
+    }
+    .wishlist-index-index button{
+        height: 35px;
+        line-height: 35px;
+        padding: 0 15px;
+    }
+}
+
+@media only screen and (max-width: 639px){
+    .wishlist-index-index .products-grid.wishlist .product-item{
+        width:50% !important;
+    }
+    .wishlist-index-index .products-grid.wishlist .product-item {
+        margin-bottom: 20px;
+    }
+}
+@media only screen and (max-width:479px){
+    .wishlist-index-index button{
+        height: 35px;
+        line-height: 35px;
+    }
+    .wishlist-index-index  button span{
+        font-size: 12px;
+    }
+    .wishlist-index-index .products-grid.wishlist .product-item {
+        padding: 20px 16px 20px 20px;
+    }
+    .wishlist-index-index .products-grid.wishlist .product-item{
+        width:50% !important;
+    }
+}
+@media only screen and (max-width:450px){
+    .wishlist-index-index button{
+        height: 35px;
+        line-height: 35px;
+        padding: 0 22px;
+    }
+    .wishlist-index-index button span{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width:380px){
+    .wishlist-index-index button{
+        height: 35px;
+        line-height: 35px;
+        padding: 0 11px;
+    }
+    .wishlist-index-index button span{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 359px){
+    .wishlist-index-index .products-grid.wishlist .product-item{
+        width:100% !important;
+    }
+    .wishlist-index-index button {
+         padding: 0 35px;
+    }
+} 
