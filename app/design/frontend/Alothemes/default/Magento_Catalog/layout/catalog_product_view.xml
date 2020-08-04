@@ -92,7 +92,9 @@
 									</container>
 								</container>
 								<container name="product.info.media" htmlTag="div" htmlClass="product media product-img-box clearfix col-md-5 col-sm-5 col-xs-12" before="-">
+<!--
 									 <block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image" template="product/view/gallery.phtml"/> 
+-->
 								</container>
 							</container>
 							<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.details" template="product/view/details.phtml" after="-">
