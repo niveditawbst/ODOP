@@ -13,6 +13,7 @@
         <!--<remove src="css/styles-l.css"/-->
 		 <!-- Add Magicmenu -->
 		<css src="Magiccart_Magicmenu::css/magicmenu.css" />
+		<css src="Magento_Wishlist::css/wishlist.css" />
 		<!-- Fontawesome -->
 		<css src="font/fontawesome/css/font-awesome.min.css" />
 		<css src="font/pe-icon-stroke/css/pe-icon-7-stroke.css" />
