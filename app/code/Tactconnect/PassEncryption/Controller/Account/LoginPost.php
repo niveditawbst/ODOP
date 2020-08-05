@@ -169,15 +169,17 @@ class LoginPost extends AbstractAccount implements CsrfAwareActionInterface, Htt
             $login = $this->getRequest()->getPost('login');
             /*What need to write here for change attribute value like Token and id */
 	        $password = $login['password'];
-          //  $password = 'ZXghVGZ4fG8XPjkSXt8N4A==';
-	        if($password)
+	        $salt = $this->session->getCustomerLoginEncryptionKey();
+
+            if($password && $salt)
 	        {
-	            $key = pack("H*", "a6d09dbffa488df48ebf273727ebebe1b08a5691eeeae8d59e401255073a3af8");
-	            $iv = pack("H*", "a5f65b2ee53eab72f26091421363a033");
+	            $key = pack("H*", $salt.$salt);
+	            $iv = pack("H*", $salt);
 	            $decryptedPassword = base64_decode($password);
-   				$decrypted = openssl_decrypt($decryptedPassword , 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv); 
-	            $login['password'] = $decrypted;
-	        }
+   				$decrypted = openssl_decrypt($decryptedPassword , 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv);
+                $login['password'] = $decrypted;
+	            $this->session->unsCustomerLoginEncryptionKey();
+            }
             if (!empty($login['username']) && !empty($login['password'])) {
                 try {
                     $customer = $this->customerAccountManagement->authenticate($login['username'], $login['password']);
