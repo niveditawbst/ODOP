@@ -3,4 +3,8 @@
     <type name="Magento\Checkout\Model\ShippingInformationManagement">
         <plugin name="save-in-quote-address" type="Techelogy\Checkoutfield\Plugin\Checkout\ShippingInformationManagementPlugin" sortOrder="10"/>
 	</type>
+	
+	<type name="Magento\Sales\Block\Adminhtml\Order\View\Info">
+        <plugin name="render-type" type="Techelogy\Checkoutfield\Plugin\Checkout\ShowExtensionAttributes" sortOrder="20"/>
+    </type>
 </config>
