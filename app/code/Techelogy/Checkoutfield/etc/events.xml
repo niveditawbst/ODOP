@@ -3,4 +3,9 @@
     <event name="sales_model_service_quote_submit_before">
         <observer name="Techelogy_Checkoutfield_sales_model_service_quote_submit_before" instance="Techelogy\Checkoutfield\Observer\SaveOrderBeforeSalesModelQuoteObserver" />
     </event>
+<!--
+    <event name="customer_address_format">
+        <observer name="add_additional_telephone_number_in_address_template" instance="Techelogy\Checkoutfield\Observer\AlternateTelephoneNumber" />
+    </event>
+-->
 </config>
