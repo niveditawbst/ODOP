@@ -35,6 +35,7 @@ class RetriveSessionData
      * @var $productParams
      */
     protected $productParams;
+    protected $_customerCreateEncKey;
 
 
     /**
