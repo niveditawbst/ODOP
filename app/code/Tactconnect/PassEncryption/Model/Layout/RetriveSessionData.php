@@ -29,13 +29,21 @@ class RetriveSessionData
 	/**
      * @var $creationStudioParams
      */
-    protected $creationStudioParams;
+    protected $_customerCreateEncKey;
 
     /**
      * @var $productParams
      */
-    protected $productParams;
-    protected $_customerCreateEncKey;
+    protected $_customerLoginEncKey;
+
+    /**
+     * @var $productParams
+     */
+    protected $_frontendChangePasswordEncKey;
+    protected $_frontendResetPasswordEncKey;
+    protected $_backendLoginEncKey;
+    protected $_backendResetPasswordEncKey;
+    
 
 
     /**
