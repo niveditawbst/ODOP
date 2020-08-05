@@ -34,7 +34,6 @@ class ResetPasswordPost extends \Magento\Customer\Controller\Account\ResetPasswo
         $password = openssl_decrypt($password , 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv);
         $passwordConfirmation = base64_decode($passwordConfirmation);
         $passwordConfirmation = openssl_decrypt($passwordConfirmation , 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv);
-        echo $password.'::'.$passwordConfirmation;exit;
         $this->session->unsFrontendResetPasswordEncryptionKey();
         if ($password !== $passwordConfirmation) {
             $this->messageManager->addError(__("New Password and Confirm New Password values didn't match."));
