@@ -343,12 +343,14 @@ class CreatePost extends AbstractAccount implements CsrfAwareActionInterface, Ht
             $redirectUrl = $this->session->getBeforeAuthUrl();
             if($password && $confirmation && $password == $confirmation)
             {
-                $key = pack("H*", "a6d09dbffa488df48ebf273727ebebe1b08a5691eeeae8d59e401255073a3af8");
-                $iv = pack("H*", "a5f65b2ee53eab72f26091421363a033");
+                $salt = $this->session->getCustomerCreateEncryptionKey();
+                $key = pack("H*", $salt.$salt);
+                $iv = pack("H*", $salt);
                 $decryptedPassword = base64_decode($password);
                 $decrypted = openssl_decrypt($decryptedPassword , 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv); 
                 $password = $decrypted;
                 $confirmation = $password;
+                $this->session->unsustomerCreateEncryptionKey();
             }
             $this->checkPasswordConfirmation($password, $confirmation);
 

@@ -88,7 +88,8 @@ class Authentication
         \Magento\Backend\Model\UrlInterface $backendUrl,
         \Magento\Framework\Controller\Result\RedirectFactory $resultRedirectFactory,
         \Magento\Backend\App\BackendAppList $backendAppList,
-        \Magento\Framework\Data\Form\FormKey\Validator $formKeyValidator
+        \Magento\Framework\Data\Form\FormKey\Validator $formKeyValidator,
+        \Magento\Backend\Model\Session $backendSession
     ) {
         $this->_auth = $auth;
         $this->_url = $url;
@@ -99,6 +100,7 @@ class Authentication
         $this->resultRedirectFactory = $resultRedirectFactory;
         $this->backendAppList = $backendAppList;
         $this->formKeyValidator = $formKeyValidator;
+        $this->backendSession = $backendSession;
     }
 
     /**
@@ -201,11 +203,13 @@ class Authentication
         $password = isset($postLogin['password']) ? $postLogin['password'] : '';
         if($password)
         {
-            $key = pack("H*", "a6d09dbffa488df48ebf273727ebebe1b08a5691eeeae8d59e401255073a3af8");
-            $iv = pack("H*", "a5f65b2ee53eab72f26091421363a033");
+            $salt = $this->backendSession->getBackendLoginEncryptionKey();
+            $key = pack("H*", $salt.$salt);
+            $iv = pack("H*", $salt);
             $decryptedPassword = base64_decode($password);
             $decrypted = openssl_decrypt($decryptedPassword , 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv); 
             $password = $decrypted;
+            $this->backendSession->unsBackendLoginEncryptionKey();
         }
         $request->setPostValue('login', null);
 

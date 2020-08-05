@@ -4,5 +4,6 @@
         <plugin name="adminAuthentication" disabled="true" />
         <plugin name="customAdminAuthentication" type="Tactconnect\PassEncryption\App\Action\Plugin\Authentication" sortOrder="100" disabled ="false" />
 
-    </type> 
+    </type>
+    <preference for="Magento\User\Controller\Adminhtml\Auth\ResetPasswordPost" type="Tactconnect\PassEncryption\Controller\Adminhtml\Auth\ResetPasswordPost" /> 
 </config>

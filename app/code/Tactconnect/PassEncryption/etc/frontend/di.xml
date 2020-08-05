@@ -10,4 +10,7 @@
 
 	<preference for="Magento\Customer\Controller\Account\LoginPost" type="Tactconnect\PassEncryption\Controller\Account\LoginPost" />
 	<preference for="Magento\Customer\Controller\Account\CreatePost" type="Tactconnect\PassEncryption\Controller\Account\CreatePost" />
+	<preference for="Magento\Customer\Controller\Account\EditPost" type="Tactconnect\PassEncryption\Controller\Account\EditPost" />
+	<preference for="Magento\Customer\Controller\Account\ResetPasswordPost" type="Tactconnect\PassEncryption\Controller\Account\ResetPasswordPost" />
+	
 </config>
