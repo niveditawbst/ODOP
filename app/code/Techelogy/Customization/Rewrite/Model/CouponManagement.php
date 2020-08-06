@@ -36,8 +36,8 @@ class CouponManagement extends \Magento\Quote\Model\CouponManagement
         $customerEmail = $quote->getCustomerEmail();
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 		$discountCouponCode = $objectManager->create('\Magento\Framework\App\Config\ScopeConfigInterface')->getValue('tact/general/discountCoupon', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-        if($customerId && $couponCode == $discountCouponCode){
-			$checkSubscriber = $objectManager->create('\Magento\Newsletter\Model\Subscriber')->loadByEmail($customerId);
+        if($customerEmail && $couponCode == $discountCouponCode){
+			$checkSubscriber = $objectManager->create('\Magento\Newsletter\Model\Subscriber')->loadByEmail($customerEmail);
 			if (!$checkSubscriber->isSubscribed()) {
 				throw new CouldNotSaveException(__('You must be subscribe and logged in, to use this coupon code.'));
 			}
