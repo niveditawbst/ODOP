@@ -2874,3 +2874,6 @@ button.quickview:hover, button.quickview:focus{border: 0;}
     line-height: 42px;
     display: block;
 }
+.table-checkout-shipping-method tbody td:first-child {
+    padding-left: 28px;
+}
