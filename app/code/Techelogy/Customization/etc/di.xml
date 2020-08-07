@@ -3,4 +3,6 @@
 
     <preference for="Magento\Quote\Model\CouponManagement" type="Techelogy\Customization\Rewrite\Model\CouponManagement" />
 
+    <preference for="Magento\Wishlist\Controller\Index\Add" type="Techelogy\Customization\Controller\Index\Add"/>
+
 </config>
