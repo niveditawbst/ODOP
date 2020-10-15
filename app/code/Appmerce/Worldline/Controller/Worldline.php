@@ -599,6 +599,10 @@ abstract class Worldline extends \Magento\Framework\App\Action\Action implements
         
         // Set processing status
         $status = $this->getProcessingStatus($paymentMethodCode);
+        
+        if($transactionId){
+			$note = $note . ' | Transaction Id : '.$transactionId;
+		}
         $order->setState(\Magento\Sales\Model\Order::STATE_PROCESSING)
               ->setStatus($status)
               ->addStatusHistoryComment($note)
@@ -666,6 +670,10 @@ abstract class Worldline extends \Magento\Framework\App\Action\Action implements
         // Multi-method API
         $paymentMethodCode = $order->getPayment()->getMethod();
 
+		if($transactionId){
+			$note = $note . ' | Transaction Id : '.$transactionId;
+		}
+		
         // Set pending_payment status
         $status = $this->getPendingStatus($paymentMethodCode);
         $order->setState(\Magento\Sales\Model\Order::STATE_PENDING_PAYMENT)
