@@ -16,7 +16,13 @@ $customHelper = $this->helper('Techelogy\Customization\Helper\Data');
 
 ?>
 <?php $_product = $block->getProduct(); ?>
-<?php $buttonTitle = __('Add to Cart'); ?>
+<?php $isExhibitionProduct = $_product->getData('exhibition_product'); ?>
+
+<?php if($isExhibitionProduct): ?>
+	<?php $buttonTitle = __('Buy Now'); ?>
+<?php else: ?>
+	<?php $buttonTitle = __('Add to Cart'); ?>
+<?php endif; ?>
 <?php if ($_product->isSaleable()): ?>
 	
 <div class="box-tocart">
@@ -48,6 +54,11 @@ $customHelper = $this->helper('Techelogy\Customization\Helper\Data');
 				</div>
 			</div>
         </div>
+        
+        <div class="exhibition-price">
+			<label><?php echo __('Custom Price : ') ?></label> 
+			<input type="text" value="" name="exhibition_price" class="required required-number"/>
+		</div>
         <?php endif; ?>
             <button type="submit"
                     title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
@@ -132,6 +143,9 @@ $customHelper = $this->helper('Techelogy\Customization\Helper\Data');
 	</div>
 </div>
 <?php endif; ?>
+
+<input type="hidden" id="exhibitionProduct" value="<?php echo $_product->getData('exhibition_product'); ?>"/>
+<input type="hidden" value="<?php echo $this->getUrl('checkout'); ?>" id="checkoutUrl"/>
 
 <?php endif; ?>
 <?php if ($block->isRedirectToCartEnabled()) : ?>
