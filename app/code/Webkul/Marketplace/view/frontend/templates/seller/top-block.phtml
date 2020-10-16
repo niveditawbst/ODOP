@@ -52,12 +52,14 @@ if ($partner['shop_url']) {
         </style>
         <?php
     } ?>
+<!--
     <div class="wk-mp-banner">
-        <?php if ($helper->isSellerSliderModuleInstalled()) {
-            echo $block->getChildHtml("marketplace_seller_slider_block");
-        } ?>
-        <img class="wk-mp-banner-image" src="<?= /* @noEscape */ $bannerpic; ?>">
+        <?php //if ($helper->isSellerSliderModuleInstalled()) {
+            //echo $block->getChildHtml("marketplace_seller_slider_block");
+        //} ?>
+        <img class="wk-mp-banner-image" src="<?php //echo /* @noEscape */ $bannerpic; ?>">
     </div>
+-->
     <div class="wk-mp-collection-header-box">
         <div class="wk-mp-collection-seller-title-container">
             <a href="<?= /* @noEscape */ $helper->getRewriteUrl('marketplace/seller/profile/shop/'.$shopUrl);?>" >
