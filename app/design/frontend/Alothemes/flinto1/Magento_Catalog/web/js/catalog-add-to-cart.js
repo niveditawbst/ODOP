@@ -148,7 +148,7 @@ define([
 					
 					var checkoutUrl = $('#checkoutUrl').val();
 					var exhibitionProduct = $('#exhibitionProduct').val();
-					if(exhibitionProduct){
+					if(exhibitionProduct == 1){
 						window.location.href = checkoutUrl;
 						return;
 					}
