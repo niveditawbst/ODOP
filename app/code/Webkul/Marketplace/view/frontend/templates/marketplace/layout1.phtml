@@ -200,21 +200,23 @@ if (!$helper->isCustomerLoggedIn()) {
             } ?>
         </div>
 
+<!--
         <div class="wk-mp-label3-container">
             <div class="wk-mp-label3">
-                <h3 class="wk-marketplace-label-about"><?= $block->escapeHtml($marketplacelabel3) ?></h3>
+                <h3 class="wk-marketplace-label-about"><?php //echo $block->escapeHtml($marketplacelabel3) ?></h3>
 
-                <a href="<?= $block->escapeUrl($block->getUrl('marketplace/seller/sellerlist/', ['_secure' => $this->getRequest()->isSecure()])); ?>">
+                <a href="<?php //echo $block->escapeUrl($block->getUrl('marketplace/seller/sellerlist/', ['_secure' => $this->getRequest()->isSecure()])); ?>">
                     <button class="button wk-mp-landing-button">
                         <span>
                             <span>
-                                <?= /* @noEscape */  __('View All'); ?>
+                                <?php //echo /* @noEscape */  __('View All'); ?>
                             </span>
                         </span>
                     </button>
                 </a>
             </div>
         </div>
+-->
     <?php } ?>
 
     <h1 class="wk-marketplace-label"><?= $block->escapeHtml($marketplacelabel4) ?></h1>
