@@ -49,7 +49,10 @@ $cardType = $helper->getDisplayCardType();
         $collectionPageUrl = $helper->getRewriteUrl('marketplace/seller/collection/shop/'.$shopUrl);
         $profilePageUrl = $helper->getRewriteUrl('marketplace/seller/profile/shop/'.$shopUrl);
     ?>
+<!--
     <div class="wk-seller-block wk-block no-display" id="mp-wk-block">
+-->
+    <div class="wk-seller-block wk-block" id="mp-wk-block">
         <div class="wk-seller-card-container wk-card-type<?= $block->escapeHtml($cardType); ?>">
             <?php if ($cardType == 2): ?>
                 <div class="wk-seller-card-details-block">
