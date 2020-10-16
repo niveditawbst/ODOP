@@ -1468,3 +1468,11 @@ body .wk-mp-design .toolbar .pages {
         padding: 10px 0;
     }
 }
+
+.product-view a.action.towishlist.alotheme-tooltip {
+	margin-top: 20px !important;
+}
+ 
+.product-view .wk-seller-block{
+	margin-left:15px !important;
+}
