@@ -55,10 +55,14 @@ $customHelper = $this->helper('Techelogy\Customization\Helper\Data');
 			</div>
         </div>
         
-        <div class="exhibition-price">
-			<label><?php echo __('Custom Price : ') ?></label> 
-			<input type="text" value="" name="exhibition_price" class="required required-number"/>
-		</div>
+       
+        <?php if($_product->getData('exhibition_product')): ?>
+			<div class="exhibition-price">
+				<label><?php echo __('Custom Price : ') ?></label> 
+				<input type="text" value="" name="exhibition_price" class="required validate-number"/>
+			</div>
+        <?php endif; ?>
+        
         <?php endif; ?>
             <button type="submit"
                     title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
