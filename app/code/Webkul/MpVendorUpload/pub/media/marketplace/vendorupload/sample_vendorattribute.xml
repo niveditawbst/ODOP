@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<node>
+	<vendor>
+		<email>test@webkul.com</email>
+		<profileurl>webkul</profileurl>
+		<firstname>webkul</firstname>
+		<group_name>Wholesale</group_name>
+		<lastname>Test</lastname>
+		<store_id>1</store_id>
+		<custome_attribute1>wktest</custome_attribute1>
+		<custome_attribute2>India,USA</custome_attribute2>
+	</vendor>
+	<vendor>
+		<email>test1@webkul.com</email>
+		<profileurl>urltestdone</profileurl>
+		<firstname>hey</firstname>
+		<group_name>Wholesale</group_name>
+		<lastname>buddy</lastname>
+		<store_id>1</store_id>
+		<custome_attribute1>wktest</custome_attribute1>
+		<custome_attribute2>India,USA</custome_attribute2>
+	</vendor>
+</node>

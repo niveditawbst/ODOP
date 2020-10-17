@@ -1,0 +1,8 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
+    <broker topic="vendorupload.topic" exchange="magento-db" type="db">
+        <queue name="vendorupload.topic"
+               consumer="vendorupload.topic"
+               consumerInstance="Magento\Framework\MessageQueue\Consumer"
+               handler="Webkul\MpVendorUpload\Model\MassConsumer::process"/>
+    </broker>
+</config>

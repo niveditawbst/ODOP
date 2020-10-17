@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="wk_vendor_upload" resource="default" engine="innodb" comment="Marketplace Vendor Upload Profile Table">
+    <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+    <column xsi:type="int" name="vendor_group" padding="10" unsigned="true" nullable="false" identity="false" comment="Vendor Group ID"/>
+    <column xsi:type="varchar" name="label" nullable="false" length="255" comment="Label"/>
+    <column xsi:type="varchar" name="profileurl" nullable="false" length="255" comment="Profile URL"/>
+    <column xsi:type="varchar" name="email" nullable="false" length="255" comment="Email"/>
+    <column xsi:type="varchar" name="firstname" nullable="false" length="255" comment="First Name"/>
+    <column xsi:type="int" name="group_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Group ID"/>
+    <column xsi:type="varchar" name="lastname" nullable="false" length="255" comment="Last Name"/>
+    <column xsi:type="int" name="store_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Store ID"/>
+    <column xsi:type="int" name="website_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Website ID"/>
+    <column xsi:type="varchar" name="status_message" nullable="false" length="255" default="Queued" comment="Status Message"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="entity_id"/>
+    </constraint>
+  </table>
+  <table name="wk_vendor_profile_attributes" resource="default" engine="innodb" comment="Marketplace Vendor Upload Profile EAV values">
+    <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+    <column xsi:type="int" name="profile_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Profile ID"/>
+    <column xsi:type="varchar" name="code" nullable="false" length="255" comment="Attribute Code"/>
+    <column xsi:type="varchar" name="value" nullable="false" length="255" comment="EAV values"/>
+    <column xsi:type="varchar" name="frontend_input" nullable="false" length="255" comment="Attribute Frontend"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="id"/>
+    </constraint>
+  </table>
+</schema>
