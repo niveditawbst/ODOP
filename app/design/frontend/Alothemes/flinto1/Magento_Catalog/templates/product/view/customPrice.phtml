@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Catalog\Block\Product\View */
+?>
+<?php
+$_product = $block->getProduct();
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $isExhibitionProduct = $_product->getData('exhibition_product'); ?>
+
+
+<?php if($_product->getData('exhibition_product')): ?>
+	<div class="exhibition-price">
+		<div class="custom-price-wrapper">
+			<label><?php echo __('Booking amount : ') ?></label> 
+			<input type="text" value="" name="exhibition_price" class="required validate-number validate-digits-range digits-range-500-100000"/>
+		</div>
+		<div class="custom-price-note">
+			<p><?php echo __('Note: Price should be in between 500 INR to 1,00,000 INR.') ?></p>
+		</div>
+	</div>
+<?php endif; ?>
