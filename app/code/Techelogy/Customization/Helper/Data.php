@@ -5,6 +5,7 @@
 namespace Techelogy\Customization\Helper;
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
+
 	protected $_wishlistFactory;
 	protected $_sessionFactory;
 	/**
@@ -13,10 +14,12 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 	public function __construct(
 		\Magento\Framework\App\Helper\Context $context,
 		\Magento\Wishlist\Model\WishlistFactory $wishlistFactory,
-		\Magento\Customer\Model\SessionFactory $sessionFactory
+		\Magento\Customer\Model\SessionFactory $sessionFactory,
+		\Magento\Framework\Mail\Template\TransportBuilder $transportBuilder
 	) {
 		$this->_wishlistFactory = $wishlistFactory;
 		$this->_sessionFactory = $sessionFactory;
+		$this->_transportBuilder = $transportBuilder;
 		parent::__construct($context);
 	}
 	
@@ -74,4 +77,22 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 	  }
 	   //~ exit;
 	}
+	public function sendCustomEmail($templateId, $storeId, $sender, $toEmails, $templateParams){
+        try{
+            $this->_transportBuilder->setTemplateIdentifier($templateId)
+                ->setTemplateOptions(['area' => \Magento\Framework\App\Area::AREA_FRONTEND, 'store' => $storeId])
+                ->setTemplateVars($templateParams)
+                ->setFrom($sender);
+            foreach($toEmails as $email)
+            {
+                $this->_transportBuilder->addTo($email);
+            }
+            $transport = $this->_transportBuilder->getTransport();
+            $transport->sendMessage(); 
+        }catch(\Exception $e)
+        {
+
+        }
+        
+    }
 }
