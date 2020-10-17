@@ -2880,9 +2880,15 @@ button.quickview:hover, button.quickview:focus{border: 0;}
 
 .actions.add-to-cart .exhibition-price {
  display: inline-flex !important;
- margin: 20px 0 10px 0 !important;
+ margin-bottom: 20px !important;
+ position: relative;
 }
  
 .actions.add-to-cart .exhibition-price label {
  width: 130px !important;
+}
+.actions.add-to-cart .exhibition-price div#exhibition_price-error {
+ left: 29%;
+ position: absolute;
+ top: 26px;
 }
