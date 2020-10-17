@@ -9,4 +9,9 @@
     <event name="checkout_cart_product_add_after">
         <observer name="setCustomPrice" instance="Techelogy\Customization\Observer\SetCustomPrice" />
     </event> 
+    
+    <!-- Disable other offline payment methods, for exhibition products -->
+    <event name="payment_method_is_active">
+        <observer name="disablePaymentMethod" instance="Techelogy\Customization\Observer\DisablePaymentMethod" />
+    </event> 
 </config>
