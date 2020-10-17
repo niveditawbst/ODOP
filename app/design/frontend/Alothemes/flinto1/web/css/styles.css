@@ -2879,7 +2879,6 @@ button.quickview:hover, button.quickview:focus{border: 0;}
 }
 
 .actions.add-to-cart .exhibition-price {
- display: inline-flex !important;
  margin-bottom: 20px !important;
  position: relative;
 }
@@ -2891,4 +2890,26 @@ button.quickview:hover, button.quickview:focus{border: 0;}
  left: 29%;
  position: absolute;
  top: 26px;
+}
+
+.product-exhibition-product .custom-price-wrapper {
+ display: flex;
+ position: relative;
+}
+.product-exhibition-product .custom-price-note {
+ margin-top:25px;
+}
+.product-exhibition-product .control {
+ display: inline-block;
+ vertical-align: middle;
+}
+.product-exhibition-product label.label {
+ display: inline-block;
+}
+.product-exhibition-product .custom-price-note p {
+ color: #e02b27;
+ font-size: 1.2rem;
+}
+.product-exhibition-product .product-view .wk-seller-block {
+ margin-left: 25px !important;
 }
