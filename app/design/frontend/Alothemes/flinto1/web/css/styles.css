@@ -2877,3 +2877,12 @@ button.quickview:hover, button.quickview:focus{border: 0;}
 .table-checkout-shipping-method tbody td:first-child {
     padding-left: 28px;
 }
+
+.actions.add-to-cart .exhibition-price {
+ display: inline-flex !important;
+ margin: 20px 0 10px 0 !important;
+}
+ 
+.actions.add-to-cart .exhibition-price label {
+ width: 130px !important;
+}
