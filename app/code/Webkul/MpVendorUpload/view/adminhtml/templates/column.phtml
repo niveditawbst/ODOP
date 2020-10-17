@@ -1,0 +1,32 @@
+<?php
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_MpVendorUpload
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+?>
+<?php
+$attributeCollection = $block->getCustomerAttributes();
+?>
+<div data-bind="scope: 'vendor-attribute-component-scope'" id="vendor_upload_view_tabs_column_attribute_content">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+ {
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "vendor-attribute-component-scope": {
+                    "component": "Webkul_MpVendorUpload/js/vendorAttribute",
+                    "attributeData": <?= /* @noEscape */ json_encode($attributeCollection); ?>,
+                    "template" : "Webkul_MpVendorUpload/attribute.html"
+                }
+            }
+        }
+    }
+}
+</script>

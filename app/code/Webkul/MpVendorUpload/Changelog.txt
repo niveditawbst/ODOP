@@ -1,0 +1,10 @@
+Legend
+
++ Features
+- Bugs
+
+-------------------------------- Version 3.0.0 --------------------------------------
+	+ compatible with magento 2.3.x.
+	+ compatible with marketplace 2.3.x.
+	+ compatible with marketplace vendor attribute module.
+	+ Admin can add bulk vendor upload using csv,xls,xml files.

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Webkul Software
+ *
+ * @category Webkul
+ * @package Webkul_MpVendorUpload
+ * @author Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license https://store.webkul.com/license.html
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Webkul\MpVendorUpload\Api\Data\UploadProfileInterface" type="Webkul\MpVendorUpload\Model\UploadProfile"/>
+    <preference for="Webkul\MpVendorUpload\Api\UploadProfileRepositoryInterface" type="Webkul\MpVendorUpload\Model\UploadProfileRepository"/>
+    <preference for="Webkul\MpVendorUpload\Api\Data\ProfileAttributesInterface" type="Webkul\MpVendorUpload\Model\ProfileAttributes"/>
+    <preference for="Webkul\MpVendorUpload\Api\ProfileAttributesRepositoryInterface" type="Webkul\MpVendorUpload\Model\ProfileAttributesRepository"/>
+    <preference for="Magento\Framework\MessageQueue\ConsumerConfigurationInterface" type="Magento\Framework\MessageQueue\ConsumerConfiguration"/>
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Webkul\MpVendorUpload\Api\Data\UploadProfileInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">wk_vendor_upload</item>
+                    <item name="identifierField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Webkul\MpVendorUpload\Api\Data\ProfileAttributesInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">wk_vendor_profile_attributes</item>
+                    <item name="identifierField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Webkul\MpVendorUpload\Model\ResourceModel\UploadProfile\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">wk_vendor_upload</argument>
+            <argument name="eventPrefix" xsi:type="string">upload_profile_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">upload_profile_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Webkul\MpVendorUpload\Model\ResourceModel\UploadProfile</argument>
+        </arguments>
+    </type>
+    <virtualType name="uploadProfileGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Webkul\MpVendorUpload\Model\ResourceModel\UploadProfile\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">uploadProfileGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="upload_profile_listing_data_source" xsi:type="string">Webkul\MpVendorUpload\Model\ResourceModel\UploadProfile\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Webkul\MpVendorUpload\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Webkul\MpVendorUpload\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">myLoggerName</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Webkul\MpVendorUpload\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

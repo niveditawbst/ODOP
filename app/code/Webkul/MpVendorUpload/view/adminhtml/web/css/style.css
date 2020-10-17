@@ -1,0 +1,23 @@
+/**
+ * MpVendorUpload
+ *
+ * @category  Webkul
+ * @package   Webkul_MpVendorUpload
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+
+#wk_customer_attributes {
+    margin-bottom: 15px;
+}
+
+.sample-file-links div {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+
+.sample-file-links {
+    margin-bottom: 20px;
+}

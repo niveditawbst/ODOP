@@ -1,0 +1,45 @@
+<!--
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_MpVendorUpload
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+ -->
+<section class="admin__page-section">
+    <div class="admin__page-section-title">
+        <span class="title" data-bind="i18n:'Vendor Attributes'"></span>
+    </div>
+    <div class="admin__page-section-content">
+        <select class="select admin__control-select" id="wk_customer_attributes" data-bind="value: selectValue, event:{change: selectAttribute()}">
+            <!-- ko foreach: attributeData -->
+                <option data-bind="attr: {'value':id}, i18n:label"></option>
+            <!-- /ko -->
+        </select>
+        <!--ko if: isSelected -->
+            <p><strong data-bind="i18n:'Column Code: '"></strong><span data-bind="text:getArrayData('code')"></span></p>
+            <p><strong data-bind="i18n:'Input Type: '"></strong><span data-bind="i18n:getArrayData('frontend_input')"></span></p>
+            <p><strong data-bind="i18n:'Required: '"></strong><span data-bind="i18n:getIsRequiredLabel()"></span></p>
+            <!--ko if: getOptions().length > 0 -->
+                <p><strong data-bind="i18n:'Options: '"></strong></p>
+                <table id="vendor_attribute_options" class="admin__table-secondary">
+                    <thead><tr>
+                      <th data-bind="i18n:'Label'"></th>
+                      <th data-bind="i18n:'Value'"></th>
+                    </tr></thead>
+                    <tbody>
+                    <!-- ko foreach: getOptions() -->
+                        <tr>
+                            <td data-bind="i18n:label"></td>
+                            <td data-bind="text:value"></td>
+                        </tr>
+                    <!-- /ko -->
+                    </tbody>
+                </table>
+            <!-- /ko -->
+        <!-- /ko -->
+    </div>
+</section>

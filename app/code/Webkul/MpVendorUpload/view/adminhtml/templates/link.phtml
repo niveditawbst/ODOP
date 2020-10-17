@@ -1,0 +1,28 @@
+<?php
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_MpVendorUpload
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+?>
+ <div class="sample-file-links">
+    <div class="link-div">
+        <a href="<?= $block->escapeUrl($block->getCsvLink()); ?>" download >
+            <?= /* @noEscape */ __('Sample CSV file') ?>
+        </a>
+    </div>
+    <div class="link-div">
+        <a href="<?= $block->escapeUrl($block->getXmlLink()); ?>" download >
+            <?= /* @noEscape */ __('Sample XML file') ?>
+        </a>
+    </div>
+    <div class="link-div">
+        <a href="<?= $block->escapeUrl($block->getXlsLink()); ?>" download >
+            <?= /* @noEscape */ __('Sample XLS file') ?>
+        </a>
+    </div>
+ </div>

@@ -1,0 +1,42 @@
+"Please Select","Please Select"
+"Media Image","Media Image"
+File,File
+"Vendor Mass Upload","Vendor Mass Upload"
+"Profile Information","Profile Information"
+"Profile Label","Profile Label"
+"Assign Group","Assign Group"
+"Upload CSV/XML/XLS","Upload CSV/XML/XLS"
+"Upload Image/file Zip","Upload Image/file Zip"
+"Vendor Upload","Vendor Upload"
+"Column Attributes","Column Attributes"
+Upload,Upload
+"Vendor Profiles","Vendor Profiles"
+msg,msg
+"Please upload a valid CSV/XML/XLS file","Please upload a valid CSV/XML/XLS file"
+"Your upload requests have been successfully added to the queue","Your upload requests have been successfully added to the queue"
+"%1 account already exits with email's or shopurl","%1 account already exits with email's or shopurl"
+Uploaded,Uploaded
+"Email or ShopUrl already exists","Email or ShopUrl already exists"
+"Something wrong with the uploaded file format","Something wrong with the uploaded file format"
+"Profile Attributes with id ""%1"" does not exist.","Profile Attributes with id ""%1"" does not exist."
+"Upload Profile with id ""%1"" does not exist.","Upload Profile with id ""%1"" does not exist."
+"Sample CSV file","Sample CSV file"
+"Sample XML file","Sample XML file"
+"Sample XLS file","Sample XLS file"
+"Vendor Attributes","Vendor Attributes"
+"Column Code: ","Column Code: "
+"Input Type: ","Input Type: "
+"Required: ","Required: "
+"Options: ","Options: "
+Label,Label
+Value,Value
+"Marketplace Vendor Mass Upload","Marketplace Vendor Mass Upload"
+"Enable Mass Vendor Upload","Enable Mass Vendor Upload"
+#ID,#ID
+Profile,Profile
+"Vendor URL","Vendor URL"
+"Vendor Attribute Group","Vendor Attribute Group"
+Email,Email
+"First Name","First Name"
+"Last Name","Last Name"
+Message,Message
