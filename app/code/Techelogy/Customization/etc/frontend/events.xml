@@ -11,7 +11,7 @@
     </event> 
     
     <!-- Disable other offline payment methods, for exhibition products -->
-    <event name="payment_method_is_active">
+     <event name="payment_method_is_active">
         <observer name="disablePaymentMethod" instance="Techelogy\Customization\Observer\DisablePaymentMethod" />
     </event> 
     
