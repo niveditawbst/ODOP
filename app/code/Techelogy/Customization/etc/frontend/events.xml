@@ -11,7 +11,11 @@
     </event> 
     
     <!-- Disable other offline payment methods, for exhibition products -->
-  <!--   <event name="payment_method_is_active">
+     <event name="payment_method_is_active">
         <observer name="disablePaymentMethod" instance="Techelogy\Customization\Observer\DisablePaymentMethod" />
-    </event>  -->
+    </event> 
+    
+    <event name="layout_load_before">
+        <observer name="load_custom_handler" instance="Techelogy\Customization\Observer\LayoutLoadBefore" />
+    </event>
 </config>
