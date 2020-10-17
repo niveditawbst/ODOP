@@ -58,8 +58,13 @@ $customHelper = $this->helper('Techelogy\Customization\Helper\Data');
        
         <?php if($_product->getData('exhibition_product')): ?>
 			<div class="exhibition-price">
-				<label><?php echo __('Custom Price : ') ?></label> 
-				<input type="text" value="" name="exhibition_price" class="required validate-number"/>
+				<div class="custom-price-wrapper">
+					<label><?php echo __('Custom Price : ') ?></label> 
+					<input type="text" value="" name="exhibition_price" class="required validate-number validate-digits-range digits-range-500-100000"/>
+				</div>
+				<div class="custom-price-note">
+					<p><?php echo __('Note: Price should be in between 500INR to 1,00,000INR.') ?></p>
+				</div>
 			</div>
         <?php endif; ?>
         
