@@ -17,11 +17,11 @@ if ($helper->getPageLayout() == 2) {
 ?>
 <div class="field required profileurl" id="wantptr">
     <label class="label">
-        <?= /* @noEscape */ __('Shop URL');?>
+        <?= /* @noEscape */ __('Shop display name');?>
     </label>
     <div class="control" id="wk-mp-become-seller-box-wrapper" data-role="wk-mp-become-seller-box-wrapper">
         <input type="hidden" name="is_seller" value='1'/>
-        <input type="text" class="input-text required-entry" name="profileurl" id="profileurl" data-role="shop-url" placeholder="<?= /* @noEscape */ __('Shop URL For Your Marketplace Shop');?>" title="<?= /* @noEscape */ __('Shop URL For Your Marketplace Shop');?>" value=""/>
+        <input type="text" class="input-text required-entry" name="profileurl" id="profileurl" data-role="shop-url" placeholder="<?= /* @noEscape */ __('Shop display name');?>" title="<?= /* @noEscape */ __('Shop display name');?>" value=""/>
         <div id="wk-load" class="no-display">
             <img height="16px" width="16px" src="<?= /* @noEscape */ $this->getViewFileUrl('Webkul_Marketplace::images/ajax-loader-tr.gif');?>" />
         </div>

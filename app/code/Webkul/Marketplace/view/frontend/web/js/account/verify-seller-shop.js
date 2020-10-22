@@ -29,8 +29,9 @@ define([
             profileurlClass: '.profileurl',
             wantpartnerClass: '.wantpartner',
             pageLoader: '#wk-load',
-            shopLabel: $t('Shop URL'),
-            shopTitle: $t(' Shop URL For Your Marketplace Shop '),
+            //~ shopLabel: $t('Shop URL'),
+            shopLabel: $t('Shop display name'),
+            shopTitle: $t(' Shop display name For Your Marketplace Shop '),
             shopText: $t(' (This will be used to display your public profile) ')
         },
         _create: function () {
