@@ -32,9 +32,15 @@
 		    <referenceContainer name="columns.top">
 				<referenceBlock name="page.main.title" remove="true"/>
 			</referenceContainer>
+<!--
             <block class="Magento\Contact\Block\ContactForm" name="contactForm" template="Magento_Contact::form.phtml">
+-->
+<!--
                 <container name="form.additional.info" label="Form Additional Info"/>
+-->
+<!--
             </block>
+-->
         </referenceContainer>
     </body>
 </page>
