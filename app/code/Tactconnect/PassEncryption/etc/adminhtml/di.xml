@@ -6,4 +6,8 @@
 
     </type>
     <preference for="Magento\User\Controller\Adminhtml\Auth\ResetPasswordPost" type="Tactconnect\PassEncryption\Controller\Adminhtml\Auth\ResetPasswordPost" /> 
+    
+    
+    <preference for="Magento\Catalog\Controller\Adminhtml\Product\Save" type="Tactconnect\PassEncryption\Controller\Adminhtml\Catalog\Product\Save" />
+    
 </config>

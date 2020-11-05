@@ -129,6 +129,7 @@ class Save extends \Magento\Catalog\Controller\Adminhtml\Category\Save
         }
 
         $categoryPostData = $this->getRequest()->getPostValue();
+		$categoryPostData = $this->sanitizeRequest($categoryPostData);
 
 		$isValidImage = $this->validateImageParam($categoryPostData);
         if(!$isValidImage){
@@ -274,6 +275,9 @@ class Save extends \Magento\Catalog\Controller\Adminhtml\Category\Save
 
 
     public function validateImageParam($postValues){
+		//~ echo '<pre>###';
+		//~ print_r($postValues);
+		//~ exit;
 		$postImages = isset($postValues['image']) ? $postValues['image'] : null;
 		if($postImages && is_array($postImages) && count($postImages)){
 			
@@ -283,19 +287,31 @@ class Save extends \Magento\Catalog\Controller\Adminhtml\Category\Save
 				$url = isset($postImage['url']) ? $postImage['url'] : null;
 				$allowedImgType = ['jpg', 'gif', 'jpeg', 'png'];
 					
-				//~ $imgName = 'a.html';
+				//~ $imgName = 'a.jpg.jpg';
 				if($imgName){
 					$imgExt = pathinfo($imgName, PATHINFO_EXTENSION);
 					if(!in_array($imgExt, $allowedImgType)){
 						return false;
 					} 
+					
+					// check if name contain more than one extension
+					$strCount = substr_count($imgName, '.'.$imgExt);
+					if($strCount > 1){
+						return false;
+					}
 				}
 				 
 				if($file){
 					$fileExt = pathinfo($file, PATHINFO_EXTENSION);
 					if(!in_array($fileExt, $allowedImgType)){
 						return false;
-					} 
+					}
+					
+					// check if file contain more than one extension
+					$strCount = substr_count($file, '.'.$fileExt);
+					if($strCount > 1){
+						return false;
+					}
 				}
 				 
 				if($url){
@@ -303,11 +319,32 @@ class Save extends \Magento\Catalog\Controller\Adminhtml\Category\Save
 					if(!in_array($urlExt, $allowedImgType)){
 						return false;
 					}
+					
+					// check if url contain more than one extension
+					$strCount = substr_count($url, '.'.$urlExt);
+					if($strCount > 1){
+						return false;
+					}
 				}
 			}
 		}
 		return true;
     }
+    
+    public function sanitizeRequest($postValue){
+		
+		array_walk_recursive($postValue, function(&$value, $k){
+			if($value && strpos($value, '<script>') !== false){
+				$value = str_replace('<script>', '', $value);
+			}
+			
+			if($value && strpos($value, '</script>') !== false){
+				$value = str_replace('</script>', '', $value);
+			}
+		});
+		
+		return $postValue;
+	}
 
 
     /**
