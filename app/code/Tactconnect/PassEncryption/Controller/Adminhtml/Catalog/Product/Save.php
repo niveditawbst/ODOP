@@ -198,7 +198,7 @@ class Save extends \Magento\Catalog\Controller\Adminhtml\Product\Save
 				}
 			}
 		}
-		return false;
+		return true;
     }
     /**
      * Save product action
