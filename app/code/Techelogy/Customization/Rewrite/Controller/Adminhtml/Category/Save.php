@@ -341,6 +341,10 @@ class Save extends \Magento\Catalog\Controller\Adminhtml\Category\Save
 			if($value && strpos($value, '</script>') !== false){
 				$value = str_replace('</script>', '', $value);
 			}
+			
+			if($value){
+				$value = strip_tags($value);
+			}
 		});
 		
 		return $postValue;
