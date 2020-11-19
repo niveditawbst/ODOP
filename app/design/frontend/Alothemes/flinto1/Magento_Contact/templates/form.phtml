@@ -12,7 +12,8 @@
       id="contact-form"
       method="post"
       data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
-      data-mage-init='{"validation":{}}'>
+      data-mage-init='{"validation":{}}'
+      autocomplete="off">
     <div class="contact-content">
         <div class="contact-form clearfix">
 			<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('contact_details')->toHtml();?>
