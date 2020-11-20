@@ -9,5 +9,6 @@
     
     
     <preference for="Magento\Catalog\Controller\Adminhtml\Product\Save" type="Tactconnect\PassEncryption\Controller\Adminhtml\Catalog\Product\Save" />
+    <preference for="Magento\Cms\Controller\Adminhtml\Page\Save" type="Tactconnect\PassEncryption\Controller\Adminhtml\Page\Save" />
     
 </config>

@@ -100,6 +100,8 @@ class Save extends \Magento\Catalog\Controller\Adminhtml\Product\Save
 		$postValue = $this->getRequest()->getPostValue();
 		
 		array_walk_recursive($postValue, function(&$value, $k){
+			$skipAttrsForHtmlsTags = ['description', 'short_description'];
+			
 			if($value && strpos($value, '<script>') !== false){
 				$value = str_replace('<script>', '', $value);
 			}
@@ -108,7 +110,7 @@ class Save extends \Magento\Catalog\Controller\Adminhtml\Product\Save
 				$value = str_replace('</script>', '', $value);
 			}
 			
-			if($value){
+			if($value && !in_array($k, $skipAttrsForHtmlsTags)){
 				$value = strip_tags($value);
 			}
 		});

@@ -334,6 +334,8 @@ class Save extends \Magento\Catalog\Controller\Adminhtml\Category\Save
     public function sanitizeRequest($postValue){
 		
 		array_walk_recursive($postValue, function(&$value, $k){
+			$skipAttrsForHtmlsTags = ['description'];
+			
 			if($value && strpos($value, '<script>') !== false){
 				$value = str_replace('<script>', '', $value);
 			}
@@ -342,7 +344,7 @@ class Save extends \Magento\Catalog\Controller\Adminhtml\Category\Save
 				$value = str_replace('</script>', '', $value);
 			}
 			
-			if($value){
+			if($value && !in_array($k, $skipAttrsForHtmlsTags)){
 				$value = strip_tags($value);
 			}
 		});
