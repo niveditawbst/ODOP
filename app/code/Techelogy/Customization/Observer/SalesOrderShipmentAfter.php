@@ -64,7 +64,7 @@ class SalesOrderShipmentAfter implements ObserverInterface
 		//	send SMS 
 		if(count($customerTelephone) > 0 && $enableSMS){
 			try{
-				//~ $objectManager->create('Techelogy\Customization\Helper\Data')->sendSMS($customerTelephone);
+				$objectManager->create('Techelogy\Customization\Helper\Data')->sendSMS($customerTelephone);
 			}catch(\Exception $e){
 				return;
 			}
