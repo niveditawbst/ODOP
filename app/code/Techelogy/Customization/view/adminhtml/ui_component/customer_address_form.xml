@@ -20,7 +20,7 @@
 <!--
                         <options class="Magento\Directory\Model\ResourceModel\Country\Collection"/>
 -->
-                        <options class="Magento\Directory\Model\ResourceModel\Country\Collection"/>
+                        <options class="Techelogy\Customization\Model\Config\Source\Country"/>
                     </settings>
                 </select>
             </formElements>
